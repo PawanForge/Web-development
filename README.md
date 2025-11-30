@@ -1,3 +1,4 @@
+
 <!-- Dynamic Banner -->
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2500&pause=900&color=00C8FF&center=true&vCenter=true&width=650&height=70&lines=Hi+I'm+Pawan+%F0%9F%91%8B;Web+Development+Projects;HTML+%7C+CSS+%7C+JavaScript" />
@@ -6,19 +7,19 @@
 ---
 
 ## 🚀 About This Repository
-- ⚡ Beginner-friendly **Web Development Projects**  
-- 💻 Using **HTML, CSS & JavaScript**  
-- 🌱 Focused on learning and practicing **frontend basics**  
-- 🎯 Purpose: Build interactive and simple web pages  
+- Beginner-friendly **Web Development Projects**  
+- Using **HTML, CSS & JavaScript**  
+- Focused on learning and practicing **frontend basics**  
+- Purpose: Build **interactive and simple web pages**  
 
 ---
 
 ## ✨ Features
-- Clean and beginner-friendly code  
+- Clean and **easy-to-read code**  
 - Interactive **buttons, forms, and animations**  
 - Responsive layouts suitable for **desktop & mobile**  
 - Simple JS logic for dynamic content  
-- Easy to extend for practice or learning  
+- Beginner-friendly **practice projects**  
 
 ---
 
@@ -32,14 +33,13 @@
 
 ---
 
-## 🧩 Sample Code Used
+## 🧩 Sample Code
 
-### Simple Interactive Web Page
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My First Web Page</title>
+  <title>Simple Web Page</title>
   <style>
     body { font-family: Arial; text-align: center; margin-top: 50px; }
     button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
