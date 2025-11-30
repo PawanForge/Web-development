@@ -13,6 +13,25 @@
 
 ---
 
+## ✨ Features
+- Clean and beginner-friendly code  
+- Interactive **buttons, forms, and animations**  
+- Responsive layouts suitable for **desktop & mobile**  
+- Simple JS logic for dynamic content  
+- Easy to extend for practice or learning  
+
+---
+
+## 🛠 Technologies Used
+<div align="center">
+  ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+  ![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+  ![VS Code](https://img.shields.io/badge/VSCode-0078D7?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+</div>
+
+---
+
 ## 🧩 Sample Code Used
 
 ### Simple Interactive Web Page
