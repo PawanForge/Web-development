@@ -1,0 +1,31 @@
+function calculateAge() {
+  let today = new Date();
+
+  let day = today.getDate();
+  let month = today.getMonth() + 1; 
+  let year = today.getFullYear();
+
+  let dobValue = document.getElementById("dob").value;
+  let parts = dobValue.split("-");
+
+  let bYear = parseInt(parts[0]);
+  let bMonth = parseInt(parts[1]);
+  let bDay = parseInt(parts[2]);
+
+  let ageday = day - bDay;
+  let agemonth = month - bMonth;
+  let ageyear = year - bYear;
+
+  if (ageday < 0) {
+    agemonth--;
+    let lastMonthDays = new Date(year, month - 1, 0).getDate();
+    ageday = lastMonthDays + ageday;
+  }
+
+  if (agemonth < 0) {
+    ageyear--;
+    agemonth += 12;
+  }
+
+  document.getElementById("result").innerText =
+    `Your age is: ${ageday} Day,${agemonth} Month,${ageyear} Year`;
