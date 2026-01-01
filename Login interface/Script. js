@@ -1,34 +1,130 @@
 let btn=document.querySelector(".p");
+
 btn.addEventListener("click",function(){
+
 let username=document.querySelector(".pass1").value;
+
   let password=document.querySelector(".pass2").value;
+
   let msg=document.querySelector(".msg");
+
   if(username===""|| password===""){
+
 msg.innerText="Enter the detailes";
+
     msg.style.color="red";
+
     }
  else if(username=="pawan" && password==="902670"){
+
 msg.innerText="Login is successful";
+
     msg.style.color="lime";
+
     
 }
+
   else if(username!=="pawan" || password==="902670"){
+
 msg.innerText="wrong username";
+
     msg.style.color="Tan";
+
     }
    else if(username==="pawan" || password!=="902670"){
+
 msg.innerText="wrong password";
+
     msg.style.color="Blue";
     } 
   else{
+
 msg.innerText="Invalid data ";
+
   msg.styl.color="orange";
+
   }
 });
+const forgot = document.querySelector(".fP");  
+const pass = document.querySelector(".pass2");  
 
-let forgot = document.getElementById("fP");
+const loginBtn = document.querySelector(".p");  
+
+const msg = document.querySelector(".msg");     
 
 forgot.addEventListener("click", function () {
 
+  pass.style.display = "none"; 
+  
+  if (!document.querySelector(".email-input")) {
+
+    let input = document.createElement("input");
+
+    input.type = "email";
+
+    input.placeholder = "Enter your email";
+
+    input.className = "email-input";
+
+    pass.parentNode.insertBefore(input, pass.nextSibling);
+
+  }
+
+});
+
+
+loginBtn.addEventListener("click", function () {
+
+  const usernameInput = document.querySelector(".pass1");
+
+  const username = usernameInput ? usernameInput.value.trim() : "";
+
+  const emailInput = document.querySelector(".email-input");
+
+  const email = emailInput ? emailInput.value.trim() : "";
+
+
+  if (username === "" || email === "") {
+
+    msg.innerText = "Enter the details";
+
+    msg.style.color = "red";
+
+  }
+else if (username === "pawan" && email === "pawan902670@gmail.com") {
+
+    msg.innerText = "Login is successful";
+
+    msg.style.color = "lime";
+
+  }
+
+
+
+  else if (username !== "pawan") {
+
+    msg.innerText = "Wrong username";
+
+    msg.style.color = "tan";
+
+  }
+
+
+  else if (email !== "pawan902670@gmail.com") {
+
+    msg.innerText = "Wrong email";
+
+    msg.style.color = "blue";
+
+  }
+
+
+  else {
+
+    msg.innerText = "Invalid data";
+
+    msg.style.color = "orange";
+
+  }
 
 });
