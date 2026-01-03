@@ -1,9 +1,3 @@
-React.js – Components & JSX (How, Why, Purpose & Learning Notes)
-
-These notes explain WHAT, WHY, HOW, and PURPOSE of each topic, written in simple language and based only on topics from your images. Small code examples are included for learning.
-
-
----
 
 1. Component
 
