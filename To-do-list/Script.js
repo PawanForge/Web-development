@@ -1,5 +1,5 @@
-const inputBox = document.getElementById("inputBox");
 
+const inputBox = document.getElementById("inputBox");
 const container = document.getElementById("list-container");
 
 function AddTask() {
@@ -7,66 +7,52 @@ function AddTask() {
   const taskText = inputBox.value.trim();
 
   if (taskText === '') {
-
     alert("Please enter the list");
-
     return;
-
   }
 
   let li = document.createElement("li");
+  li.style.display = "flex";
+  li.style.alignItems = "center";
 
-  li.innerText = taskText;
+  let textSpan = document.createElement("span");
+  textSpan.innerText = taskText;
 
-  let delBtn = document.createElement("span");
-
-  delBtn.innerHTML = "❎";
-
-  delBtn.style.marginLeft = "10px";
-
-  delBtn.style.cursor = "pointer";
-
-  delBtn.onclick = function () {
-
-    li.remove();
-
- };
-
+  let btnBox = document.createElement("div");
+  btnBox.style.marginLeft = "auto";
+  btnBox.style.display = "flex";
+  btnBox.style.gap = "8px";
 
   let editBtn = document.createElement("span");
-
   editBtn.innerHTML = "✏️";
-
-  editBtn.style.marginLeft = "50px";
-
   editBtn.style.cursor = "pointer";
 
   editBtn.onclick = function () {
-    let newText = prompt("Edit your task:", taskText);
-
+    let newText = prompt("Edit your task:", textSpan.innerText);
     if (newText) {
-
-      li.firstChild.textContent = newText;
-
+      textSpan.innerText = newText;
     }
-
   };
 
-  li.appendChild(editBtn);
+  let delBtn = document.createElement("span");
+  delBtn.innerHTML = "❎";
+  delBtn.style.cursor = "pointer";
 
-  li.appendChild(delBtn);
+  delBtn.onclick = function () {
+    li.remove();
+  };
+
+  btnBox.appendChild(editBtn);
+  btnBox.appendChild(delBtn);
+
+  li.appendChild(textSpan);
+  li.appendChild(btnBox);
 
   li.addEventListener("click", function (e) {
-
-    if (e.target.tagName === "SPAN") return;
-
+    if (e.target === editBtn || e.target === delBtn) return;
     li.classList.toggle("checked");
-
   });
 
   container.appendChild(li);
-
   inputBox.value = "";
-
 }
-
