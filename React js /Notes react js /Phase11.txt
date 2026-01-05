@@ -1,0 +1,339 @@
+
+1. What are React Hooks?
+
+React Hooks are special functions that allow functional components to use:
+
+State
+
+Lifecycle features
+
+Side effects
+
+Context
+
+DOM access
+
+
+👉 Introduced in React 16.8
+
+
+---
+
+2. Why Hooks Were Introduced?
+
+Before Hooks (Old React)
+
+Used Class-based components
+
+State & lifecycle handled using:
+
+this.state
+
+componentDidMount
+
+componentDidUpdate
+
+componentWillUnmount
+
+
+Problems:
+
+Complex syntax
+
+this keyword confusion
+
+Code reuse difficult
+
+Large components
+
+
+
+After Hooks (Modern React)
+
+Use Functional Components
+
+Hooks replace lifecycle methods
+
+Cleaner & reusable code
+
+Better performance
+
+
+✅ Class components are now rarely used
+
+
+---
+
+3. Purpose of Hooks
+
+Hooks allow functional components to:
+
+Maintain state
+
+Handle side effects
+
+Fetch data
+
+Manipulate DOM
+
+Optimize performance
+
+Share logic (custom hooks)
+
+
+
+---
+
+4. Popular React Hooks (Corrected + Completed)
+
+Hook	Purpose
+
+useState	Manage component state
+useEffect	Handle side effects
+useContext	Use context data
+useRef	Access DOM / persist values
+useReducer	Complex state logic
+useMemo	Optimize heavy calculations
+useCallback	Prevent function re-creation
+Custom Hooks	Reuse logic
+
+
+
+---
+
+🔹 useEffect Hook (Most Important)
+
+
+---
+
+5. What is useEffect?
+
+useEffect is used to handle side effects in functional components.
+
+Side Effects Include:
+
+API calls
+
+DOM manipulation
+
+Timers
+
+Event listeners
+
+Logging
+
+Subscriptions
+
+
+
+---
+
+6. Why useEffect is Needed?
+
+Without useEffect:
+
+Side effects run during render ❌
+
+Causes infinite re-renders ❌
+
+
+With useEffect:
+
+Side effects run after render
+
+Controlled execution
+
+Better performance
+
+
+
+---
+
+7. Syntax of useEffect
+
+useEffect(() => {
+  // side effect code
+}, [dependency]);
+
+Parameters:
+
+1. Callback function → side effect logic
+
+
+2. Dependency array → controls when effect runs
+
+
+
+
+---
+
+8. Component Lifecycle in React (Using Hooks)
+
+Lifecycle Phases:
+
+1. Mounting → Component loads
+
+
+2. Updating → State/props change
+
+
+3. Unmounting → Component removed
+
+
+
+👉 useEffect handles all these
+
+
+---
+
+9. Types of useEffect (VERY IMPORTANT)
+
+
+---
+
+✅ 1. Run on Every Render
+
+useEffect(() => {
+  console.log("Runs on every render");
+});
+
+📌 Runs after every render
+
+
+---
+
+✅ 2. Run Only Once (On Mount)
+
+useEffect(() => {
+  console.log("Runs only once");
+}, []);
+
+📌 Replacement for componentDidMount
+📌 Used for API calls
+
+
+---
+
+✅ 3. Run When State Changes
+
+useEffect(() => {
+  console.log("Runs when count changes");
+}, [count]);
+
+📌 Runs only when count updates
+
+
+---
+
+✅ 4. Run When Multiple States Change
+
+useEffect(() => {
+  console.log("Runs when count or data changes");
+}, [count, data]);
+
+
+---
+
+✅ 5. Run When Props Change
+
+useEffect(() => {
+  console.log("Runs on props change");
+}, [props.value]);
+
+
+---
+
+✅ 6. Cleanup / Unmount
+
+useEffect(() => {
+  return () => {
+    console.log("Component unmounted");
+  };
+}, []);
+
+📌 Replacement for componentWillUnmount
+
+
+---
+
+10. Cleanup Function Purpose
+
+Cleanup is used to:
+
+Clear timers
+
+Remove event listeners
+
+Cancel subscriptions
+
+Avoid memory leaks
+
+
+
+---
+
+11. Example Code (Corrected & Clean)
+
+import { useState, useEffect } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  const [data, setData] = useState(0);
+
+  useEffect(() => {
+    console.log("Component mounted or updated");
+  }, [count]);
+
+  return (
+    <div>
+      <h2>Count value {count}</h2>
+      <h2>Data value {data}</h2>
+
+      <button onClick={() => setCount(count + 1)}>
+        Increment Count
+      </button>
+
+      <button onClick={() => setData(data + 1)}>
+        Increment Data
+      </button>
+    </div>
+  );
+}
+
+export default Counter;
+
+
+---
+
+12. Prevent Extra Re-rendering
+
+Use dependency array
+
+Avoid unnecessary state updates
+
+Use useMemo / useCallback for optimization
+
+
+
+---
+
+13. Handling Props Side Effects
+
+useEffect(() => {
+  console.log("Props changed");
+}, [props.value]);
+
+
+---
+
+14. Important Rules of Hooks ⚠️
+
+1. Hooks must be used inside functional components
+
+
+2. Hooks must be used at top level
+
+
+3. Do NOT use hooks inside loops or conditions
+
+
