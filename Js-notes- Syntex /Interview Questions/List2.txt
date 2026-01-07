@@ -1,0 +1,181 @@
+
+
+1. What is JavaScript?
+
+Answer:
+JavaScript is a programming language used to make web pages interactive. It runs in the browser and on the server (Node.js).
+
+
+---
+
+2. Who created JavaScript?
+
+Answer:
+Brendan Eich in 1995 at Netscape.
+
+
+---
+
+3. Is JavaScript dynamic or static?
+
+Answer:
+JavaScript is dynamic because:
+
+Variable types are decided at runtime.
+
+You don’t need to declare types.
+
+Objects and functions can change during execution.
+
+
+
+---
+
+4. Call by Value vs Call by Reference
+
+Answer:
+
+Call by Value: Pass a copy of the value. Changes don’t affect original.
+
+
+let a = 10;
+function change(x){ x = 20; }
+change(a);
+console.log(a); // 10
+
+Call by Reference: Pass the reference. Changes affect original.
+
+
+let obj = { value: 10 };
+function change(o){ o.value = 20; }
+change(obj);
+console.log(obj.value); // 20
+
+
+---
+
+5. What is a Promise?
+
+Answer:
+A Promise represents a value that will be available now, later, or never.
+
+let promise = new Promise((resolve, reject) => {
+  let success = true;
+  success ? resolve("Done") : reject("Error");
+});
+
+
+---
+
+6. What is Hoisting?
+
+Answer:
+Hoisting is JavaScript’s behavior of moving declarations to the top of their scope before running code.
+
+console.log(a); // undefined
+var a = 10;
+
+
+---
+
+7. Can we call a function before its definition?
+
+Answer:
+
+Yes, for function declarations (hoisted).
+
+No, for function expressions or arrow functions.
+
+
+sayHello(); // Works
+function sayHello(){ console.log("Hi"); }
+
+sayHi(); // Error
+var sayHi = function(){ console.log("Hi"); }
+
+
+---
+
+8. Default Parameters
+
+Answer:
+Default parameters give a default value if no argument is passed.
+
+function greet(name = "Guest") {
+  console.log("Hello " + name);
+}
+greet(); // Hello Guest
+
+
+---
+
+9. Parameters vs Arguments
+
+Answer:
+
+Parameters: Variables in function definition.
+
+Arguments: Values passed to the function.
+
+
+function add(a, b){ return a + b; } // a,b are parameters
+add(5,3); // 5,3 are arguments
+
+
+---
+
+10. Rest Parameter vs Spread Operator
+
+Answer:
+
+Feature	Rest	Spread
+
+Usage	Function definition	Function call / array / object
+Meaning	Collects multiple values into array	Expands array/object values
+Example	function sum(...nums){}	console.log(...[1,2,3])
+
+
+
+---
+
+11. Shadowing
+
+Answer:
+Shadowing happens when inner scope variable has same name as outer variable, hiding the outer variable temporarily.
+
+let x = 10;
+function test(){ 
+  let x = 20; 
+  console.log(x); // 20
+}
+console.log(x); // 10
+
+
+---
+
+12. Why use React?
+
+Answer:
+
+Build component-based UI
+
+Fast with Virtual DOM
+
+Reusable code
+
+Cross-platform with React Native
+
+Large community support
+
+
+
+---
+
+13. useState vs useEffect
+
+Answer:
+
+Hook	Purpose	Example
+
+useState	Store & update state	const [count,setCount]=useState(0);
+useEffect	Run side effects (API calls, timers)	useEffect(()=>{ fetchData() },[]);
