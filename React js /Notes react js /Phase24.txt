@@ -1,0 +1,169 @@
+📌 CONTEXT API IN REACT 19 – COMPLETE NOTES
+
+
+---
+
+🔹 What is Context API?
+
+Context API is a way to share data globally between components
+without passing props manually at every level.
+
+
+---
+
+🔹 Problem Before Context (Prop Drilling)
+
+App → Navbar → Header → Profile → UserName
+
+We pass props like:
+
+<App user={user} />
+<Navbar user={user} />
+<Header user={user} />
+<Profile user={user} />
+
+❌ Too much prop passing = Prop Drilling
+
+
+---
+
+🔹 Solution – Context API
+
+Context creates a global store where any component can read data directly.
+
+
+---
+
+🧱 3 Main Parts of Context
+
+Part	Work
+
+createContext()	Creates container
+Provider	Gives data
+useContext()	Receives data
+
+
+
+---
+
+🛠 Step-by-Step Implementation
+
+
+---
+
+📁 1. Create Context
+
+import { createContext } from "react";
+
+export const UserContext = createContext();
+
+
+---
+
+📁 2. Provide Context (Parent Component)
+
+import { UserContext } from "./UserContext";
+
+function App() {
+  const user = "Pawan";
+
+  return (
+    <UserContext.Provider value={user}>
+        <Dashboard />
+    </UserContext.Provider>
+  );
+}
+
+👉 Now user is available everywhere inside <Dashboard />
+
+
+---
+
+📁 3. Consume Context (Child Component)
+
+import { useContext } from "react";
+import { UserContext } from "./UserContext";
+
+function Profile() {
+  const user = useContext(UserContext);
+
+  return <h1>Welcome {user}</h1>;
+}
+
+
+---
+
+🔄 Data Flow Diagram
+
+App
+ └─ UserContext.Provider (value="Pawan")
+       └─ Dashboard
+             └─ Profile → useContext(UserContext)
+
+
+---
+
+🧠 Why Context is Needed?
+
+Without Context	With Context
+
+Too many props	Direct access
+Hard to maintain	Clean code
+Messy components	Organized structure
+
+
+
+---
+
+📌 Passing Multiple Values
+
+<UserContext.Provider value={{ user, role }}>
+
+Consume:
+
+const { user, role } = useContext(UserContext);
+
+
+---
+
+📦 Context with State
+
+const [user, setUser] = useState("Pawan");
+
+<UserContext.Provider value={{ user, setUser }}>
+
+Change anywhere:
+
+const { setUser } = useContext(UserContext);
+setUser("Rahul");
+
+
+---
+
+🔹 When to Use Context?
+
+Auth info (user, token)
+
+Theme (dark / light)
+
+Language
+
+Global settings
+
+
+
+---
+
+⚠ When NOT to Use Context?
+
+For simple parent → child
+
+For frequently changing data like forms
+
+
+
+---
+
+📝 One Line Definition
+
+> Context API allows sharing data globally in React without prop drilling.
