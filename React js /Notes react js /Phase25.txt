@@ -1,0 +1,17 @@
+export default function App() {
+  const user = "Pawan";
+  return <Parent user={user} />;
+}
+
+function Parent({ user }) {
+  return <Child user={user} />;
+}
+
+function Child({ user }) {
+  return <GrandChild user={user} />;
+}
+
+function GrandChild({ user }) {
+  return <h2>Hello {user}</h2>;
+}
+Prop drilling is the problem of passing data through multiple intermediate components that do not need the data themselves.
