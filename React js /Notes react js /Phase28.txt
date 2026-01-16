@@ -1,4 +1,4 @@
-
+****Header is used to manage navigation logic and styling for only the top section of the page.*****
 
 📘 Header Component with React Router – Proper Notes
 
