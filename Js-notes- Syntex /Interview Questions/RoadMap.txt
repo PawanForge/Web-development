@@ -1,0 +1,92 @@
+Here is a VERY SHORT, clear JS interview roadmap 👇
+
+
+---
+
+✅ JavaScript Interview Roadmap (Short)
+
+1️⃣ Basics (Revise)
+
+var / let / const
+
+Data types
+
+Operators
+
+Conditions & loops
+
+
+
+---
+
+2️⃣ Core Concepts (MOST IMPORTANT)
+
+Scope & Hoisting
+
+Closures
+
+this keyword
+
+Call / Apply / Bind
+
+Spread / Rest
+
+Shallow vs Deep copy
+
+
+
+---
+
+3️⃣ Arrays & Objects
+
+map / filter / reduce
+
+Destructuring
+
+Object.keys / values / entries
+
+Reference vs Value
+
+
+
+---
+
+4️⃣ Async JavaScript
+
+Callbacks
+
+Promises
+
+Async / Await
+
+Event Loop (microtask vs macrotask)
+
+
+
+---
+
+5️⃣ Tricky Logic
+
+Type coercion
+
+== vs ===
+
+Output-based questions
+
+
+
+---
+
+6️⃣ Practice
+
+CodeWars (8kyu → 6kyu)
+
+Explain answers aloud
+
+
+
+---
+
+⭐ Single Best Resource
+
+javascript.info
