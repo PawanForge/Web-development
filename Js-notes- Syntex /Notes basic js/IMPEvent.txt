@@ -1,5 +1,13 @@
+Bubbling → child to parent
+Capturing → parent to child
+stopPropagation → stop event
+preventDefault → stop browser action
+Delegation → parent handles children
+target → clicked element
+currentTarget → listener element
+Arrow function → no own this
 
-🔔 Events in JavaScript (Simple Explanation)
+/*.,...............................*/
 
 Whenever you click, type, hover, etc., an event happens.
 
