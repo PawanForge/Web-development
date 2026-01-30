@@ -1,0 +1,373 @@
+🔥 FUNCTIONS & METHODS
+---
+
+1️⃣ What is a Function? (Very Basic)
+
+👉 Definition
+
+A function is a block of code that:
+
+does a specific task
+
+runs only when called
+
+helps avoid repetition
+
+
+👉 Why we use functions?
+
+Reusability
+
+Clean code
+
+Easy debugging
+
+Modularity
+
+
+
+---
+
+✅ Basic Syntax (JavaScript)
+
+function greet() {
+  console.log("Hello World");
+}
+
+greet(); // function call
+
+📌 Interview line
+
+> A function is a reusable block of code designed to perform a specific task.
+
+
+
+
+---
+
+2️⃣ Function with Parameters & Arguments
+
+👉 Parameters vs Arguments
+
+Parameter → variable in function definition
+
+Argument → actual value passed during function call
+
+
+function add(a, b) {   // parameters
+  return a + b;
+}
+
+add(2, 3); // arguments
+
+📌 Interview Q
+Q: Difference between parameter and argument?
+A: Parameters are placeholders; arguments are actual values.
+
+
+---
+
+3️⃣ Return Statement
+
+function square(num) {
+  return num * num;
+}
+
+let result = square(5);
+console.log(result);
+
+🔴 Without return, function gives undefined.
+
+
+---
+
+4️⃣ Function Expression
+
+👉 Function stored in a variable
+
+const multiply = function(a, b) {
+  return a * b;
+};
+
+multiply(3, 4);
+
+📌 Interview point
+
+Function expressions are not hoisted
+
+
+
+---
+
+5️⃣ Arrow Function (ES6) 🔥
+
+👉 Shorter syntax
+
+const add = (a, b) => {
+  return a + b;
+};
+
+👉 One-line return
+
+const add = (a, b) => a + b;
+
+📌 Interview Difference
+
+Normal Function	Arrow Function
+
+Has its own this	No own this
+Can be used as constructor	Cannot
+
+
+
+---
+
+6️⃣ What is a Method? (IMPORTANT)
+
+👉 Definition
+
+A method is a function inside an object
+
+const user = {
+  name: "Pawan",
+  greet: function() {
+    console.log("Hello");
+  }
+};
+
+user.greet();
+
+📌 Interview line
+
+> When a function is associated with an object, it is called a method.
+
+
+
+
+---
+
+7️⃣ this Keyword (Very Important)
+
+const user = {
+  name: "Pawan",
+  sayName() {
+    console.log(this.name);
+  }
+};
+
+user.sayName();
+
+👉 this refers to current object
+
+❌ Arrow function issue
+
+sayName: () => {
+  console.log(this.name); // undefined
+}
+
+📌 Interview Trap Question Q: Why arrow function not used as method?
+A: Because it doesn’t have its own this.
+
+
+---
+
+8️⃣ Default Parameters
+
+function greet(name = "Guest") {
+  console.log("Hello " + name);
+}
+
+greet();
+greet("Pawan");
+
+
+---
+
+9️⃣ Rest Parameters
+
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b);
+}
+
+sum(1, 2, 3, 4);
+
+📌 Used when number of arguments is unknown.
+
+
+---
+
+🔟 Callback Functions
+
+👉 Function passed as argument
+
+function greet(name, callback) {
+  console.log("Hi " + name);
+  callback();
+}
+
+function welcome() {
+  console.log("Welcome!");
+}
+
+greet("Pawan", welcome);
+
+📌 Interview Use
+
+Used in async operations
+
+Used in array methods
+
+
+
+---
+
+1️⃣1️⃣ Higher Order Functions
+
+👉 Function that:
+
+accepts another function OR
+
+returns a function
+
+
+function calculate(fn) {
+  return fn(10);
+}
+
+calculate(x => x * 2);
+
+
+---
+
+1️⃣2️⃣ Built-in Methods (Very Common in Interviews)
+
+Array Methods
+
+arr.map()
+arr.filter()
+arr.reduce()
+arr.forEach()
+
+Example:
+
+const nums = [1, 2, 3];
+
+const double = nums.map(n => n * 2);
+
+📌 These are methods, not functions.
+
+
+---
+
+1️⃣3️⃣ Function Hoisting
+
+sayHello();
+
+function sayHello() {
+  console.log("Hello");
+}
+
+✔ Works because function declaration is hoisted.
+
+❌ Function expression is NOT hoisted.
+
+
+---
+
+1️⃣4️⃣ Closures (Advanced 🔥)
+
+function outer() {
+  let count = 0;
+
+  return function inner() {
+    count++;
+    console.log(count);
+  };
+}
+
+const fn = outer();
+fn();
+fn();
+
+📌 Interview line
+
+> Closure is when a function remembers variables from its lexical scope even after outer function execution.
+
+
+
+
+---
+
+1️⃣5️⃣ IIFE (Immediately Invoked Function)
+
+(function() {
+  console.log("Runs immediately");
+})();
+
+📌 Used to avoid global scope pollution.
+
+
+---
+
+1️⃣6️⃣ Method Chaining
+
+"hello"
+  .toUpperCase()
+  .split("")
+  .reverse()
+  .join("");
+
+
+---
+
+🧠 FOLLOW-UP STUDY PATTERN (IMPORTANT)
+
+🔹 Step 1: Learn Syntax
+
+✔ function
+✔ arrow
+✔ method
+
+🔹 Step 2: Understand Behavior
+
+✔ this
+✔ hoisting
+✔ scope
+
+🔹 Step 3: Practice Interview Topics
+
+✔ callback
+✔ HOF
+✔ closure
+
+🔹 Step 4: Apply in React
+
+✔ event handlers
+✔ custom functions
+✔ array methods in JSX
+
+
+---
+
+🎯 INTERVIEW PRACTICE QUESTIONS
+
+1. Function vs Method?
+
+
+2. Arrow function vs normal?
+
+
+3. What is closure?
+
+
+4. Why this not working in arrow function?
+
+
+5. Explain callback with example
+
+
+6. Hoisting difference?
+
+
+7. map vs forEach?
+Tell me what you want next 🔥
