@@ -22,3 +22,7 @@ export default function SubmitForm() {
     </div>
   );
 }
+useActionState is a React hook for handling form submissions.
+It returns data, action, and pending.
+The action is attached to the form, and React internally calls it with previousState and formData when the form is submitted.
+data holds the result of the action, and pending indicates whether submission is in progress.
