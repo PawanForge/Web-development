@@ -24,3 +24,34 @@ return(
             </div>
      );
 }
+// 
+import React, { useId } from "react";
+
+export default function App() {
+  const id = useId();
+
+  return (
+    <>
+      {/* Name field */}
+      <label htmlFor={`${id}-name`}>Enter the user name</label>
+      <br />
+      <input
+        id={`${id}-name`}
+        type="text"
+        placeholder="Enter the name"
+      />
+
+      <br />
+      <br />
+
+      {/* Password field */}
+      <label htmlFor={`${id}-password`}>Enter the user password</label>
+      <br />
+      <input
+        id={`${id}-password`}
+        type="password"
+        placeholder="Enter the password"
+      />
+    </>
+  );
+}
