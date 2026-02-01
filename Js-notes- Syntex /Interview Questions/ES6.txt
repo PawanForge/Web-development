@@ -1,0 +1,367 @@
+
+---
+
+✅ ES6 
+
+
+---
+
+1️⃣ let, const, var (Scope & Hoisting)
+
+Q1. What is the difference between var, let, and const?
+
+Answer:
+
+var → function scoped, hoisted (initialized as undefined)
+
+let → block scoped, hoisted but in TDZ
+
+const → block scoped, cannot reassign
+
+
+
+---
+
+Q2. Output?
+
+console.log(a);
+let a = 10;
+
+Answer: ❌ ReferenceError
+Reason: Temporal Dead Zone (TDZ)
+
+
+---
+
+Q3. Is this valid?
+
+const obj = { name: "Pawan" };
+obj.name = "Aman";
+
+Answer: ✅ Valid
+Reason: const prevents reassignment, not mutation
+
+
+---
+
+2️⃣ Arrow Functions
+
+Q4. Difference between normal function and arrow function?
+
+Answer:
+
+No this, arguments, super
+
+Short syntax
+
+Lexical this
+
+
+
+---
+
+Q5. Output?
+
+const obj = {
+  name: "Pawan",
+  show: () => console.log(this.name)
+};
+obj.show();
+
+Answer: undefined
+Reason: Arrow function has no own this
+
+
+---
+
+Q6. Can arrow functions be used as constructors?
+
+Answer: ❌ No (new not allowed)
+
+
+---
+
+3️⃣ Template Literals
+
+Q7. Advantage of template literals?
+
+Answer:
+
+String interpolation
+
+Multi-line strings
+
+Cleaner syntax
+
+
+
+---
+
+Q8. Output?
+
+let a = 5;
+let b = 10;
+console.log(`${a + b}`);
+
+Answer: 15
+
+
+---
+
+4️⃣ Default Parameters
+
+Q9. Output?
+
+function test(a = 5, b = a * 2) {
+  return b;
+}
+test();
+
+Answer: 10
+
+
+---
+
+Q10. When are default parameters used?
+
+Answer: Only when argument is undefined
+
+
+---
+
+5️⃣ Destructuring (Array & Object)
+
+Q11. Output?
+
+const [a, , b, ...rest] = [1,2,3,4,5];
+console.log(a, b, rest);
+
+Answer: 1 3 [4,5]
+
+
+---
+
+Q12. Is this valid?
+
+const [...rest, a] = [1,2];
+
+Answer: ❌ Invalid
+Rule: Rest must be last
+
+
+---
+
+Q13. Output?
+
+const { x = 10 } = { x: undefined };
+
+Answer: 10
+
+
+---
+
+Q14. Real use of destructuring?
+
+Answer: React props, API responses, function parameters
+
+
+---
+
+6️⃣ Spread vs Rest Operator
+
+Q15. Difference between spread & rest?
+
+Answer:
+
+Spread → expands
+
+Rest → collects
+
+
+
+---
+
+Q16. Output?
+
+const arr1 = [1,2];
+const arr2 = [...arr1];
+arr2.push(3);
+console.log(arr1);
+
+Answer: [1,2] (no mutation)
+
+
+---
+
+Q17. Output?
+
+function test(...args) {
+  return args.length;
+}
+test(1,2,3);
+
+Answer: 3
+
+
+---
+
+7️⃣ Enhanced Object Literals
+
+Q18. What is object shorthand?
+
+let a = 10;
+let obj = { a };
+
+
+---
+
+Q19. Output?
+
+const obj = {
+  x: 10,
+  getX() {
+    return this.x;
+  }
+};
+obj.getX();
+
+Answer: 10
+
+
+---
+
+8️⃣ Modules (import / export)
+
+Q20. Difference between named & default export?
+
+Answer:
+
+Named → { }
+
+Default → any name
+
+
+
+---
+
+Q21. Can we have multiple default exports?
+
+Answer: ❌ No
+
+
+---
+
+9️⃣ Classes
+
+Q22. What is class in ES6?
+
+Answer: Syntactic sugar over constructor functions
+
+
+---
+
+Q23. Output?
+
+class Test {
+  constructor() {
+    this.x = 10;
+  }
+}
+console.log(typeof Test);
+
+Answer: "function"
+
+
+---
+
+Q24. What is super()?
+
+Answer: Calls parent class constructor
+
+
+---
+
+🔟 Promises
+
+Q25. Promise states?
+
+Answer: pending, fulfilled, rejected
+
+
+---
+
+Q26. Output?
+
+Promise.resolve(10)
+  .then(x => x * 2)
+  .then(x => console.log(x));
+
+Answer: 20
+
+
+---
+
+Q27. Why promises?
+
+Answer: Avoid callback hell & manage async code
+
+
+---
+
+1️⃣1️⃣ for...of vs for...in
+
+Q28. Difference?
+
+Answer:
+
+for...of → values
+
+for...in → keys/index
+
+
+
+---
+
+1️⃣2️⃣ Map & Set
+
+Q29. Difference between Object and Map?
+
+Answer:
+
+Map allows any key type
+
+Maintains insertion order
+
+
+
+---
+
+Q30. Why Set?
+
+Answer: To store unique values
+
+
+---
+
+1️⃣3️⃣ Symbol
+
+Q31. Why Symbol?
+
+Answer: Create unique keys to avoid collisions
+
+
+---
+
+🔥 MOST IMPORTANT INTERVIEW RULES (FINAL REVISION)
+
+✔ let/const → block scope
+✔ Arrow → no own this
+✔ Rest must be last
+✔ Spread avoids mutation
+✔ Default param works on undefined
+✔ Promise .then() chaining
+✔ Class = function internally
+
+
+---
+
