@@ -1,0 +1,6 @@
+App
+ └── Provider (subject)
+     └── College
+         └── Class
+             └── Student
+                 └── Subject (uses useContext)
