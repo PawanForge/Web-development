@@ -1,0 +1,45 @@
+
+Why do we use onChange in React input fields?
+
+React does not automatically track input values.
+onChange is used to capture user input whenever the value changes and update state.
+
+
+---
+
+Why not use other events?
+
+onClick ❌
+Fires only when clicking the input, not while typing.
+
+onSubmit ❌
+Runs only when the form is submitted, too late to track input changes.
+
+onInput ⚠️
+Works, but onChange is preferred in React for consistency and best practice.
+
+
+
+---
+
+Example
+
+<input value={name} onChange={(e) => setName(e.target.value)} />
+
+
+---
+
+Interview Answer
+
+> “We use onChange because it tracks input changes in real time and keeps React state synchronized with the UI. Other events don’t track typing properly.”
+
+
+
+
+---
+
+Key Point
+
+onChange is the recommended event for input handling in React
+
+Ensures predictable and controlled data flow
