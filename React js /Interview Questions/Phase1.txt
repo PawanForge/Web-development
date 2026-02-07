@@ -1,0 +1,163 @@
+
+1️⃣ React
+
+Q1. What is React?
+React is a JavaScript library used to build user interfaces, mainly for single-page applications. It uses a component-based architecture and a virtual DOM for better performance.
+
+Q2. Why is React faster than traditional JavaScript?
+React uses a virtual DOM to update only the changed elements instead of reloading the entire page.
+
+
+---
+
+2️⃣ Components
+
+Q3. What is a component in React?
+A component is a reusable piece of UI that returns JSX.
+
+Q4. Types of components in React?
+There are two types:
+
+Function components
+
+Class components
+
+
+Q5. Which component is mostly used today and why?
+Function components are mostly used because they are simple and use Hooks.
+
+
+---
+
+3️⃣ Vite
+
+Q6. What is Vite?
+Vite is a modern build tool used to create and run React applications faster.
+
+Q7. Why is Vite faster than Create React App?
+Vite uses modern JavaScript features and faster bundling, which improves development speed.
+
+
+---
+
+4️⃣ JSX
+
+Q8. What is JSX?
+JSX is a syntax extension of JavaScript that allows writing HTML inside JavaScript.
+
+Q9. Is JSX mandatory in React?
+No, JSX is not mandatory, but it makes code easier to read and write.
+
+
+---
+
+5️⃣ Curly Braces {}
+
+Q10. Why do we use curly braces in JSX?
+Curly braces are used to embed JavaScript expressions inside JSX.
+
+Q11. What can be written inside {}?
+Variables, function calls, expressions, and conditional logic.
+
+
+---
+
+6️⃣ Events
+
+Q12. What are events in React?
+Events are user actions like click, submit, or change.
+
+Q13. How are React events different from HTML events?
+React events use camelCase and are written inside JSX.
+
+Example:
+
+<button onClick={handleClick}>Click</button>
+
+
+---
+
+7️⃣ State
+
+Q14. What is state in React?
+State is an object that stores dynamic data that controls the component’s behavior.
+
+Q15. How do you update state in a function component?
+By using the useState hook.
+
+
+---
+
+8️⃣ Toggle Element
+
+Q16. What is a toggle in React?
+A toggle is switching between two states like show/hide or on/off.
+
+Example:
+
+const [show, setShow] = useState(false);
+
+
+---
+
+9️⃣ Condition
+
+Q17. What is conditional rendering?
+Conditional rendering means displaying UI based on a condition.
+
+Example:
+
+{isLoggedIn && <h1>Welcome</h1>}
+
+
+---
+
+🔟 Rendering Base
+
+Q18. What is rendering in React?
+Rendering means displaying the UI on the screen based on JSX.
+
+Q19. When does React re-render a component?
+When state or props change.
+
+
+---
+
+⭐ One-Line Rapid Revision (Very Useful)
+
+React → UI library
+
+Components → Reusable UI blocks
+
+Vite → Fast build tool
+
+JSX → HTML inside JS
+
+{} → JavaScript in JSX
+
+Events → User actions
+
+State → Dynamic data
+
+Toggle → Switch UI
+
+Condition → Show/hide UI
+
+Rendering → Display UI
+
+
+
+---
+
+If you want next, I can:
+
+Convert this into mock interview Q&A
+
+Give coding-based interview questions
+
+Provide real-time scenarios
+
+Create 2–3 marks exam answers
+
+
+Just tell me 💪
