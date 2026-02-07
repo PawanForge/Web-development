@@ -224,6 +224,8 @@ children allows passing JSX content to components.
 
 Wrapper Component
 
+A wrapper component is a React component that wraps other components to add common UI or logic without modifying the original components.
+
 function Wrapper({ children }) {
   return (
     <div style={{ border: "2px solid green", padding: "10px" }}>
