@@ -1,0 +1,133 @@
+
+---
+
+What is an Error?
+
+An error is a problem in a program that stops it from running correctly or gives the wrong output.
+
+👉 In short:
+Error = mistake in code or logic
+
+
+---
+
+Types of Errors (Most Important for Interviews)
+
+1️⃣ Syntax Error
+
+What it is:
+Mistake in writing the code (grammar of the language).
+
+Example (JavaScript):
+
+console.log("Hello World"
+
+❌ Missing closing )
+
+Key point:
+
+Code will not run
+
+Caught before execution
+
+
+
+---
+
+2️⃣ Runtime Error
+
+What it is:
+Error that occurs while the program is running.
+
+Example:
+
+let x = undefined;
+console.log(x.length);
+
+❌ Cannot read property length
+
+Key point:
+
+Program starts running
+
+Error happens during execution
+
+
+
+---
+
+3️⃣ Logical Error
+
+What it is:
+Code runs fine, but output is wrong.
+
+Example:
+
+let a = 10;
+let b = 5;
+console.log(a - b); // expected addition
+
+❌ Logic is wrong
+
+Key point:
+
+Most dangerous
+
+No error message
+
+Found by testing
+
+
+
+---
+
+JavaScript-Specific Errors (Interview Favorite)
+
+4️⃣ Reference Error
+
+Using a variable that is not defined.
+
+console.log(x);
+
+
+---
+
+5️⃣ Type Error
+
+Wrong operation on a data type.
+
+let num = 5;
+num();
+
+
+---
+
+6️⃣ Range Error
+
+Value is out of allowed range.
+
+let arr = new Array(-1);
+
+
+---
+
+Quick Interview Summary 🧠
+
+Error Type	When Happens	Example
+
+Syntax	Before run	Missing bracket
+Runtime	During run	Undefined access
+Logical	After run	Wrong output
+Reference	Variable issue	Variable not defined
+Type	Data type issue	Calling number as function
+
+
+
+---
+
+One-line Interview Answer:
+
+> An error is a mistake in a program that causes incorrect execution or output. Common types are syntax, runtime, and logical errors.
+
+
+
