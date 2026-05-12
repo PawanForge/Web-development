@@ -1,3 +1,3 @@
-export default function ClgStudent(){
-    return <h1>Student</h1>
+export default function ClgDepartment(){
+    return <h1>Department</h1>
 }
