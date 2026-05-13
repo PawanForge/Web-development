@@ -1,39 +1,13 @@
-Great start, Pawan! 🙌
-Your README already looks good for a beginner repo. Let’s make it **more professional, attractive, and GitHub-ready** with better structure, badges, sections, and clarity.
-
-You can **copy–paste this directly** into your `README.md`.
-
----
-
-```md
 <!-- Dynamic Typing Banner -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2500&pause=800&color=00C8FF&center=true&vCenter=true&width=750&height=80&lines=Hi+I'm+Pawan+Kumar+Yadav+%F0%9F%91%8B;Frontend+Web+Development+Learner;HTML+%7C+CSS+%7C+JavaScript+Projects;Building+Interactive+Web+Pages" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2500&pause=800&color=00C8FF&center=true&vCenter=true&width=800&height=90&lines=Hi+I'm+Pawan+Kumar+Yadav+%F0%9F%91%8B;Frontend+Web+Development+Learning+Journey;HTML+%7C+CSS+%7C+JavaScript+Projects;Daily+Progress+Tracker" />
 </p>
 
-<h1 align="center">🌐 Web Development Practice Projects</h1>
+# 🌐 Web Development Projects & Progress Tracker
 
-<p align="center">
-  Beginner-friendly projects made with ❤️ using HTML, CSS, and JavaScript
-</p>
+This repository contains my **practice projects** while learning **Frontend Development** using **HTML, CSS, and JavaScript**.
 
----
-
-## 📌 About This Repository
-
-This repository contains my **practice projects** while learning **Frontend Web Development**.
-
-🎯 Goal: Strengthen my fundamentals by building **simple, interactive, and responsive web pages**.
-
----
-
-## 🚀 What You'll Find Here
-
-- ✅ Beginner-friendly mini projects  
-- ✅ Clean and well-structured code  
-- ✅ Interactive buttons, forms, and animations  
-- ✅ Responsive layouts (Mobile + Desktop)  
-- ✅ Basic JavaScript logic for dynamic behavior  
+🎯 **Goal:** Build strong fundamentals by creating real mini projects and tracking my daily progress.
 
 ---
 
@@ -48,107 +22,97 @@ This repository contains my **practice projects** while learning **Frontend Web 
 
 ---
 
-## 📂 Project Structure
+## 📈 Learning Progress Checklist
+
+### ✅ HTML Progress
+- [x] Basic tags (headings, paragraph, image, links)
+- [x] Lists and tables
+- [x] Forms and input fields
+- [x] Semantic tags
+- [ ] Audio & Video
+- [ ] SEO basics
+
+### 🎨 CSS Progress
+- [x] Selectors and colors
+- [x] Box model
+- [x] Flexbox
+- [x] Positions
+- [ ] Grid
+- [ ] Animations
+- [ ] Media Queries (Responsive)
+
+### ⚙️ JavaScript Progress
+- [x] Variables and data types
+- [x] Functions
+- [x] Events
+- [x] DOM manipulation
+- [ ] Arrays & Objects
+- [ ] ES6 Features
+- [ ] Form validation
+- [ ] API Fetch
+
+---
+
+## 📂 Project Progress Table
+
+| # | Project Name | Concepts Used | Status | Folder |
+|---|--------------|---------------|--------|--------|
+| 1 | Greeting Page | HTML, CSS, JS Button | ✅ Done | Greeting-Page |
+| 2 | Login Form UI | Form, CSS Styling | ✅ Done | Login-Form |
+| 3 | Responsive Card | Flexbox, Media Query | ⏳ In Progress | Responsive-Card |
+| 4 | To-Do List | DOM, Events | ⬜ Pending | Todo-App |
+| 5 | Calculator | Functions, Events | ⬜ Pending | Calculator |
+
+_Update this table whenever you add a new project._
+
+---
+
+## 🗂️ Folder Structure
 
 ```
-
-📁 Web-Development-Projects
-┣ 📁 Project-1
-┣ 📁 Project-2
-┣ 📁 Project-3
-┗ README.md
-
-````
-
-Each folder contains a small project to practice specific concepts.
+Web-Development-Projects/
+ ┣ 📁 Greeting-Page
+ ┣ 📁 Login-Form
+ ┣ 📁 Responsive-Card
+ ┣ 📁 Todo-App
+ ┣ 📁 Calculator
+ ┗ README.md
+```
 
 ---
 
-## ✨ Sample Code Preview
+## 📝 Daily Practice Log
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Simple Web Page</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      margin-top: 50px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 6px;
-      border: none;
-      background-color: #00C8FF;
-      color: white;
-    }
-  </style>
-</head>
-<body>
+| Date | What I Learned | Project/Topic |
+|------|-----------------|---------------|
+| 12 May | Flexbox & Layout | Responsive Card |
+| 13 May | DOM Events | Greeting Page |
 
-  <h1>Hello, I am Pawan 👋</h1>
-  <p>Click the button to see a greeting:</p>
-  <button onclick="showMessage()">Click Me</button>
-
-  <script>
-    function showMessage() {
-      alert("Welcome to my Web Development Repository!");
-    }
-  </script>
-
-</body>
-</html>
-````
+_Update this daily to show your consistency._
 
 ---
 
-## 🎯 Learning Objectives
+## 🎯 Learning Goals
 
-* Understanding HTML structure
-* Styling with CSS
-* Adding interactivity using JavaScript
-* Making responsive layouts
-* Writing clean and readable code
+- Write clean and readable code
+- Build responsive layouts
+- Understand JavaScript deeply
+- Create real-world mini projects
 
 ---
 
 ## 📸 Project Screenshots
 
-*Add screenshots of your projects here to make the README more attractive.*
+_Add screenshots of your projects here to make this README more attractive._
 
 ---
 
-## 🤝 Contribution
+## ⭐ Motivation
 
-This is a learning repository, but suggestions and improvements are always welcome!
+> “Small projects every day = Big improvement over time.”
 
 ---
 
 ## 📬 Connect With Me
 
-* 💼 GitHub: [https://github.com/your-username](https://github.com/your-username)
-* 📧 Email: [your-email@example.com](mailto:your-email@example.com)
-
----
-
-<h3 align="center">⭐ If you like this repository, don't forget to star it!</h3>
-```
-
----
-
-### ✅ What improved?
-
-* Professional layout
-* Better headings & spacing
-* Project structure section
-* Learning objectives
-* Contribution section
-* Connect section
-* Cleaner sample code
-* More GitHub-style presentation
-
-If you want, share your **GitHub username**, and I’ll customize the links for you.
+- GitHub: https://github.com/your-username
