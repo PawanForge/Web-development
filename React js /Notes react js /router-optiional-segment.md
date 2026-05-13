@@ -177,3 +177,123 @@ You follow **one pattern everywhere**.
 ## 📝 In One Line
 
 > Optional segment lets **one component** handle **list view and detail view** using clean URLs and less code.
+
+
+
+
+//////////////////////////////////////
+
+
+
+
+You are trying to write `NavLink` like this 👇 (but syntax is wrong):
+
+```jsx
+className{{isActive}} => isActive ? 'customLink' : 'Link'
+```
+
+Let’s fix it and understand **what each part means**.
+
+---
+
+## ✅ Correct Syntax with `NavLink` in React using React Router
+
+```jsx
+import { NavLink } from "react-router-dom";
+
+<NavLink
+  to="/users"
+  className={({ isActive }) =>
+    isActive ? "customLink" : "Link"
+  }
+>
+  Users
+</NavLink>
+```
+
+---
+
+## 🔍 Break the syntax
+
+| Part                      | Meaning                                         |
+| ------------------------- | ----------------------------------------------- |
+| `className={ ... }`       | JSX expects **JS** inside `{}`                  |
+| `({ isActive }) =>`       | Function that `NavLink` calls                   |
+| `isActive`                | Boolean → true if this link matches current URL |
+| `? "customLink" : "Link"` | Ternary operator (if-else)                      |
+
+---
+
+## 🧠 What happens internally?
+
+If current URL is `/users`:
+
+```js
+isActive = true
+```
+
+So class becomes:
+
+```html
+class="customLink"
+```
+
+If URL is something else:
+
+```js
+isActive = false
+```
+
+So class becomes:
+
+```html
+class="Link"
+```
+
+---
+
+## ✅ CSS Example
+
+```css
+.customLink {
+  color: red;
+  font-weight: bold;
+}
+
+.Link {
+  color: black;
+}
+```
+
+---
+
+## ✅ Full Working Example
+
+```jsx
+<nav>
+  <NavLink
+    to="/"
+    className={({ isActive }) =>
+      isActive ? "customLink" : "Link"
+    }
+  >
+    Home
+  </NavLink>
+
+  <NavLink
+    to="/users"
+    className={({ isActive }) =>
+      isActive ? "customLink" : "Link"
+    }
+  >
+    Users
+  </NavLink>
+</nav>
+```
+
+---
+
+## 📝 In Simple Words
+
+> `NavLink` gives you `isActive`.
+> You use it to **change class** when link is active.
