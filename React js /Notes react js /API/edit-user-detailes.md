@@ -209,16 +209,3 @@ navigate("/users");
 ```
 
 Or update state directly after success.
-
----
-
-# 🚀 If you want next step
-
-I can also build for you:
-
-* 🟢 Complete CRUD React project (Create + Read + Update + Delete)
-* 🟢 Routing-based Edit page (`/edit/:id`)
-* 🟢 Real interview project structure
-* 🟢 Tailwind styled UI for Edit form
-
-Just tell 👍
