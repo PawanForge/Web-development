@@ -1,84 +1,52 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, sans-serif;
-}
+const dobInput = document.getElementById("dob");
+const result = document.getElementById("result");
 
-body{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background: linear-gradient(135deg,#5329b5,#6a5acd,#7ea7ff);
-}
+let timer;
 
+function calculateAge() {
+  const value = dobInput.value.trim();
 
-.age{
-  background: rgba(255,255,255,0.15);
-  padding:45px 40px;
-  border-radius:20px;
-  width:320px;
-  text-align:center;
-  box-shadow:0 20px 40px rgba(0,0,0,0.4);
-  backdrop-filter: blur(12px);
-}
+  if (!value) {
+    result.innerText = "Enter DOB like 2000-05-10";
+    return;
+  }
 
+  // Safe local date
+  const [y, m, d] = value.split("-");
+  const birthDate = new Date(y, m - 1, d);
 
-.age h2{
-  color:#ffe66d;
-  margin-bottom:22px;
-  letter-spacing:1px;
-}
+  if (isNaN(birthDate.getTime())) {
+    result.innerText = "Wrong format! Use YYYY-MM-DD";
+    return;
+  }
 
-#dob{
-  width:100%;
-  padding:12px;
-  margin-bottom:18px;
-  border:none;
-  border-radius:10px;
-  outline:none;
-  font-size:15px;
-  background:#ffffff;
-  box-shadow: inset 4px 4px 8px rgba(0,0,0,0.15),
-              inset -4px -4px 8px rgba(255,255,255,0.8);
-  transition: all 0.35s ease;
-}
+  clearInterval(timer);
 
-#dob:focus{
-  transform:scale(1.06);
-  box-shadow:0 0 12px #00ffcc,
-             inset 4px 4px 8px rgba(0,0,0,0.15),
-             inset -4px -4px 8px rgba(255,255,255,0.8);
-}
-button{
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  font-size:15px;
-  font-weight:bold;
-  cursor:pointer;
-  color:#222;
-  background:#ffb347;
-  box-shadow: 0 8px 0 #cc8a2e,
-              0 12px 20px rgba(0,0,0,0.35);
-  transition: all 0.15s ease-in-out;
-}
+  function update() {
+    const now = new Date();
+    let diff = now - birthDate;
 
+    let sec = Math.floor(diff / 1000);
+    let min = Math.floor(sec / 60);
+    let hr = Math.floor(min / 60);
+    let day = Math.floor(hr / 24);
 
-button:hover{
-  transform: translateY(-2px);
-}
-button:active{
-  transform: translateY(6px);
-  box-shadow: 0 2px 0 #cc8a2e;
-}
+    let year = Math.floor(day / 365.25);
+    day %= 365.25;
 
+    let month = Math.floor(day / 30.44);
+    day = Math.floor(day % 30.44);
 
-#result{
-  margin-top:20px;
-  font-size:16px;
-  font-weight:600;
-  color:#ffffff;
+    hr %= 24;
+    min %= 60;
+    sec %= 60;
+
+    result.innerHTML =
+      `Your age is:<br>
+      ${year} Years, ${month} Months, ${day} Days<br>
+      ${hr} Hours, ${min} Minutes, ${sec} Seconds`;
+  }
+
+  update();
+  timer = setInterval(update, 1000);
 }
