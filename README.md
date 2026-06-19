@@ -1,118 +1,101 @@
 <!-- Dynamic Typing Banner -->
+
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2500&pause=800&color=00C8FF&center=true&vCenter=true&width=800&height=90&lines=Hi+I'm+Pawan+Kumar+Yadav+%F0%9F%91%8B;Frontend+Web+Development+Learning+Journey;HTML+%7C+CSS+%7C+JavaScript+Projects;Daily+Progress+Tracker" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2500&pause=800&color=00C8FF&center=true&vCenter=true&width=800&height=90&lines=Hi+I'm+Pawan+Kumar+Yadav+👋;Frontend+Web+Development+Learning+Journey;HTML+%7C+CSS+%7C+JavaScript+Projects;Daily+Progress+Tracker" />
 </p>
 
-# 🌐 Web Development Projects & Progress Tracker
+<h1 align="center">🌐 Web Development Projects & Progress Tracker</h1>
 
-This repository contains my **practice projects** while learning **Frontend Development** using **HTML, CSS, and JavaScript**.
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML-100%25-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CSS-90%25-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-100%25-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+</p>
 
-🎯 **Goal:** Build strong fundamentals by creating real mini projects and tracking my daily progress.
+---
+
+## 🚀 About
+
+This repository contains my practice projects and learning progress while mastering **Frontend Development** using **HTML, CSS, and JavaScript**.
+
+🎯 **Goal:** Build strong fundamentals through projects and maintain consistency.
 
 ---
 
 ## 🛠️ Technologies Used
 
 <p align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-  <img src="https://img.shields.io/badge/VS%20Code-0078D7?style=for-the-badge&logo=visualstudiocode&logoColor=white"/>
+  <img src="https://skillicons.dev/icons?i=html,css,js,vscode,git,github" />
 </p>
 
 ---
 
-## 📈 Learning Progress Checklist
+## 📈 Learning Progress
 
-### ✅ HTML Progress
-- [x] Basic tags (headings, paragraph, image, links)
-- [x] Lists and tables
-- [x] Forms and input fields
-- [x] Semantic tags
-- [ ] Audio & Video
-- [ ] SEO basics
+### ✅ HTML
 
-### 🎨 CSS Progress
-- [x] Selectors and colors
-- [x] Box model
-- [x] Flexbox
-- [x] Positions
-- [ ] Grid
-- [ ] Animations
-- [ ] Media Queries (Responsive)
+* [x] Basics, Forms, Tables, Semantic Tags
+* [x] Audio & Video
+* [x] SEO Basics
 
-### ⚙️ JavaScript Progress
-- [x] Variables and data types
-- [x] Functions
-- [x] Events
-- [x] DOM manipulation
-- [ ] Arrays & Objects
-- [ ] ES6 Features
-- [ ] Form validation
-- [ ] API Fetch
+### 🎨 CSS
+
+* [x] Box Model
+* [x] Flexbox & Grid
+* [x] Positions
+* [x] Animations & Transitions
+* [x] Responsive Design
+* [ ] Advanced CSS
+
+### ⚙️ JavaScript
+
+* [x] Variables & Functions
+* [x] DOM Manipulation
+* [x] Arrays & Objects
+* [x] ES6 Features
+* [x] Form Validation
+* [x] API Fetch & Async/Await
 
 ---
 
-## 📂 Project Progress Table
+## 📂 Featured Projects
 
-| # | Project Name | Concepts Used | Status | Folder |
-|---|--------------|---------------|--------|--------|
-| 1 | Greeting Page | HTML, CSS, JS Button | ✅ Done | Greeting-Page |
-| 2 | Login Form UI | Form, CSS Styling | ✅ Done | Login-Form |
-| 3 | Responsive Card | Flexbox, Media Query | ⏳ In Progress | Responsive-Card |
-| 4 | To-Do List | DOM, Events | ⬜ Pending | Todo-App |
-| 5 | Calculator | Functions, Events | ⬜ Pending | Calculator |
-
-_Update this table whenever you add a new project._
+| Project            | Concepts Used                  | Status      |
+| ------------------ | ------------------------------ | ----------- |
+| 📝 To-Do App       | DOM, Events, Local Storage     | ✅ Completed |
+| 🔐 Login Interface | Forms, CSS Styling             | ✅ Completed |
+| ❓ Quiz App         | DOM, Functions, Score Tracking | ✅ Completed |
 
 ---
 
 ## 🗂️ Folder Structure
 
-```
+```text
 Web-Development-Projects/
- ┣ 📁 Greeting-Page
- ┣ 📁 Login-Form
- ┣ 📁 Responsive-Card
  ┣ 📁 Todo-App
- ┣ 📁 Calculator
+ ┣ 📁 Login-Interface
+ ┣ 📁 Quiz-App
  ┗ README.md
 ```
 
 ---
 
-## 📝 Daily Practice Log
+## 🎯 Current Goals
 
-| Date | What I Learned | Project/Topic |
-|------|-----------------|---------------|
-| 12 May | Flexbox & Layout | Responsive Card |
-| 13 May | DOM Events | Greeting Page |
-
-_Update this daily to show your consistency._
-
----
-
-## 🎯 Learning Goals
-
-- Write clean and readable code
-- Build responsive layouts
-- Understand JavaScript deeply
-- Create real-world mini projects
-
----
-
-## 📸 Project Screenshots
-
-_Add screenshots of your projects here to make this README more attractive._
+* ✅ Write Clean Code
+* ✅ Build Responsive Websites
+* 🔄 Learn React.js
+* 🔄 Build Real-World Projects
 
 ---
 
 ## ⭐ Motivation
 
-> “Small projects every day = Big improvement over time.”
+> **"Small projects every day = Big improvement over time."**
 
 ---
 
 ## 📬 Connect With Me
 
-- GitHub: https://github.com/your-username
+* GitHub: https://github.com/your-username
+* LinkedIn: [www.linkedin.com/in/pawan-kumar-yadav-72781b2ba](http://www.linkedin.com/in/pawan-kumar-yadav-72781b2ba)
