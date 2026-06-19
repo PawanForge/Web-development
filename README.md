@@ -1,10 +1,16 @@
-<!-- Dynamic Typing Banner -->
+<!-- Profile Header -->
+
+<h1 align="center">Hi 👋, I'm Pawan Kumar Yadav</h1>
+
+<h3 align="center">
+Frontend Web Development Learner | HTML • CSS • JavaScript
+</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2500&pause=800&color=00C8FF&center=true&vCenter=true&width=800&height=90&lines=Hi+I'm+Pawan+Kumar+Yadav+👋;Frontend+Web+Development+Learning+Journey;HTML+%7C+CSS+%7C+JavaScript+Projects;Daily+Progress+Tracker" />
+  <a href="https://github.com/your-username">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=25&pause=1000&color=00C8FF&center=true&vCenter=true&width=700&lines=Frontend+Web+Developer;Building+Projects+with+HTML+CSS+and+JavaScript;Learning+Something+New+Every+Day+🚀" />
+  </a>
 </p>
-
-<h1 align="center">🌐 Web Development Projects & Progress Tracker</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML-100%25-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
@@ -14,15 +20,13 @@
 
 ---
 
-## 🚀 About
+# 🌐 Web Development Projects & Progress Tracker
 
-This repository contains my practice projects and learning progress while mastering **Frontend Development** using **HTML, CSS, and JavaScript**.
-
-🎯 **Goal:** Build strong fundamentals through projects and maintain consistency.
+> Building strong fundamentals through projects and consistent practice.
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=html,css,js,vscode,git,github" />
@@ -34,48 +38,59 @@ This repository contains my practice projects and learning progress while master
 
 ### ✅ HTML
 
-* [x] Basics, Forms, Tables, Semantic Tags
-* [x] Audio & Video
-* [x] SEO Basics
+* Basic Tags
+* Lists & Tables
+* Forms & Inputs
+* Semantic Tags
+* Audio & Video
+* SEO Basics
 
 ### 🎨 CSS
 
-* [x] Box Model
-* [x] Flexbox & Grid
-* [x] Positions
-* [x] Animations & Transitions
-* [x] Responsive Design
-* [ ] Advanced CSS
+* Selectors & Colors
+* Box Model
+* Flexbox
+* Grid
+* Position
+* Animations
+* Media Queries
+* Responsive Design
 
 ### ⚙️ JavaScript
 
-* [x] Variables & Functions
-* [x] DOM Manipulation
-* [x] Arrays & Objects
-* [x] ES6 Features
-* [x] Form Validation
-* [x] API Fetch & Async/Await
+* Variables & Functions
+* Loops & Conditions
+* Arrays & Objects
+* DOM Manipulation
+* Events
+* ES6 Features
+* Local Storage
+* API Fetch
+* Async / Await
 
 ---
 
 ## 📂 Featured Projects
 
-| Project            | Concepts Used                  | Status      |
-| ------------------ | ------------------------------ | ----------- |
-| 📝 To-Do App       | DOM, Events, Local Storage     | ✅ Completed |
-| 🔐 Login Interface | Forms, CSS Styling             | ✅ Completed |
-| ❓ Quiz App         | DOM, Functions, Score Tracking | ✅ Completed |
+<div align="center">
+
+| 🚀 Project         | 💻 Technologies         | 📌 Status |
+| :----------------- | :---------------------- | :-------: |
+| 📝 To-Do App       | HTML • CSS • JavaScript |     ✅     |
+| 🔐 Login Interface | HTML • CSS              |     ✅     |
+| ❓ Quiz App         | HTML • CSS • JavaScript |     ✅     |
+
+</div>
 
 ---
 
-## 🗂️ Folder Structure
+## 📊 Skill Progress
 
-```text
-Web-Development-Projects/
- ┣ 📁 Todo-App
- ┣ 📁 Login-Interface
- ┣ 📁 Quiz-App
- ┗ README.md
+```txt
+HTML         ██████████ 100%
+CSS          █████████░ 90%
+JavaScript   ██████████ 100%
+React.js     ███░░░░░░░ 30%
 ```
 
 ---
@@ -86,16 +101,43 @@ Web-Development-Projects/
 * ✅ Build Responsive Websites
 * 🔄 Learn React.js
 * 🔄 Build Real-World Projects
+* 🔄 Learn Backend Development
 
 ---
 
-## ⭐ Motivation
+## 📸 Project Structure
 
-> **"Small projects every day = Big improvement over time."**
+```text
+Web-Development-Projects/
+│
+├── 📁 Todo-App
+├── 📁 Login-Interface
+├── 📁 Quiz-App
+└── README.md
+```
+
+---
+
+## 🌟 Quote
+
+<div align="center">
+
+### *"Small projects every day = Big improvement over time."* 🚀
+
+</div>
 
 ---
 
 ## 📬 Connect With Me
 
-* GitHub: https://github.com/your-username
-* LinkedIn: [www.linkedin.com/in/pawan-kumar-yadav-72781b2ba](http://www.linkedin.com/in/pawan-kumar-yadav-72781b2ba)
+<p align="center">
+<a href="https://github.com/your-username">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
+<a href="https://www.linkedin.com/in/pawan-kumar-yadav-72781b2ba">
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+</p>
+
+<h3 align="center">⭐ Thanks for Visiting! ⭐</h3>
