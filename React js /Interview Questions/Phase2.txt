@@ -1,9 +1,0 @@
-Final Clean Summary (Interview-Ready)
-Props are used to pass data from parent to child
-Props are read-only
-React follows one-way data flow
-export shares components, import uses them
-Destructuring makes props cleaner to use
-Objects use dot notation, arrays use map()
-Default props prevent undefined errors
-Props improve reusability, readability, and maintenance
