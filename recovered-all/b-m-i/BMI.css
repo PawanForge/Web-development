@@ -1,0 +1,36 @@
+.container{
+  padding:20px;
+  margin: 100px auto;
+  width:350px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  gap: 12px;
+border: 1px solid #ccc;
+border-radius: 12px;
+background-color:#faf7f2;
+box-shadow:10px 10px 10px rgba(0,0,0,0.2);
+text-align: center;
+
+}
+.h{
+  border-radius:10px;
+  font-weight:bold;
+  border:none;
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+  box-shadow:10px 10px 10px rgba(0,0,0,0.05);
+
+}
+.w{
+  border-radius: 10px;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+  padding:5px;
+  margin: 5px;
+box-shadow:10px 10px 10px rgba(0,0,0,0.05);
+
+}
+

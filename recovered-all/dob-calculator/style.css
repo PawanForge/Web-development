@@ -1,0 +1,52 @@
+*{
+padding:0px;
+  margine:0px;
+  }
+body{
+background:linear-gradient(135deg,rgb(83,41,181),rgb(106,90,205),rgb(126,167,255)
+  );
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+    justify-content:center;
+  font-family:Arial,sans-serif;
+  }
+.age h2{
+color:yellow;
+ height:50px;
+  }
+button{
+  
+padding:5px;
+   margine:5px;
+  background-color:#f2ce9d;
+  font-weight:bold;
+  border :none;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+  }
+button:focus{
+outline:none;
+}
+
+ #dob{
+padding:5px;
+   margine:5px;
+   box-shadow:5px 5px 10px rgba(0,0,0,0.5);
+   border:none;
+   gap:15px;
+   }
+div{
+margin-top:5px;
+  background:rgba(255,255,255,0.12);
+  padding:40px;
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.35);
+  backdrop-filter:blure(8px);
+  }
+#result{
+margin-top:18px;
+  font-size:8px;
+  font-weight:600;
+  color:#fff;
+  
+}
