@@ -1,0 +1,245 @@
+Bubbling → child to parent
+Capturing → parent to child
+stopPropagation → stop event
+preventDefault → stop browser action
+Delegation → parent handles children
+target → clicked element
+currentTarget → listener element
+Arrow function → no own this
+
+/*.,...............................*/
+
+Whenever you click, type, hover, etc., an event happens.
+
+But the browser doesn’t just run the event once — it follows a 3-step process.
+
+
+---
+
+🔄 3 Phases of an Event
+
+Capturing → Target → Bubbling
+
+
+---
+
+1️⃣ Event Bubbling (MOST IMPORTANT)
+
+📌 What it means
+
+When you click a child element, the event goes:
+
+Child → Parent → Grandparent → document
+
+🧠 Simple words
+
+> Event moves upward in the DOM
+
+
+
+
+---
+
+🧪 Example
+
+<div id="parent">
+  <button id="child">Click</button>
+</div>
+
+<script>
+parent.addEventListener('click', () => console.log('Parent'));
+child.addEventListener('click', () => console.log('Child'));
+</script>
+
+👉 Output when button clicked
+
+Child
+Parent
+
+❓ Why?
+
+Click starts on button
+
+Then bubbles up to div
+
+
+✅ Default behavior
+
+
+---
+
+2️⃣ Event Capturing (Rare but Important)
+
+📌 What it means
+
+Event goes:
+
+document → Parent → Child
+
+🧠 Simple words
+
+> Event moves downward in the DOM
+
+
+
+
+---
+
+🧪 Example
+
+parent.addEventListener('click', () => console.log('Parent'), true);
+child.addEventListener('click', () => console.log('Child'));
+
+👉 Output
+
+Parent
+Child
+
+❓ Why?
+
+true means capture phase
+
+Parent runs before child
+
+
+⚠️ Capturing is off by default
+
+
+---
+
+3️⃣ stopPropagation()
+
+📌 What it does
+
+Stops event from moving further.
+
+🧪 Example
+
+child.addEventListener('click', e => {
+  console.log('Child');
+  e.stopPropagation();
+});
+
+parent.addEventListener('click', () => console.log('Parent'));
+
+👉 Output
+
+Child
+
+❓ Why?
+
+Event is stopped at child
+
+Parent never receives it
+
+
+
+---
+
+4️⃣ Event Delegation (INTERVIEW FAVORITE ⭐)
+
+📌 Problem
+
+You have many child elements or dynamic elements
+
+❌ Bad way
+
+document.querySelectorAll('li').forEach(li => {
+  li.addEventListener('click', fn);
+});
+
+Slow
+
+New elements won’t work
+
+
+
+---
+
+✅ Good way (Delegation)
+
+Attach one event to parent.
+
+ul.addEventListener('click', e => {
+  if (e.target.tagName === 'LI') {
+    console.log('LI clicked');
+  }
+});
+
+🧠 Simple words
+
+> Let the parent handle child events
+
+
+
+
+---
+
+❓ Why delegation works?
+
+Because of event bubbling
+
+Child click → bubbles to parent → parent catches it
+
+
+---
+
+🔗 Real-Life Analogy
+
+🎓 School analogy
+
+Bubbling: Student → Teacher → Principal
+
+Capturing: Principal → Teacher → Student
+
+Delegation: Teacher handles all students instead of each student separately
+
+
+
+---
+
+🧠 Interview One-Line Answers
+
+Event Bubbling
+👉 Event moves from child to parent
+
+Event Capturing
+👉 Event moves from parent to child
+
+Event Delegation
+👉 Handle child events using parent due to bubbling
+
+Why delegation is good?
+👉 Better performance + works for dynamic elements
+
+
+
+---
+
+🔥 Very Common Interview Question
+
+Q: Why does clicking child trigger parent event?
+
+Answer: Because of event bubbling
+
+Q: How to stop it?
+
+Answer: e.stopPropagation()
+
+Q: Why use event delegation?
+
+Answer: Less memory + handles dynamic elements
+
+
+---
+
+📝 Final Quick Summary
+
+Concept	Meaning
+
+Bubbling	Child → Parent
+Capturing	Parent → Child
+stopPropagation	Stops movement
+Delegation	Parent handles child events
+Default phase	Bubbling
+

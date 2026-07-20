@@ -1,0 +1,247 @@
+
+
+🔹 What is Destructuring?
+
+Destructuring means unpacking values from arrays or objects into separate variables in a short, clean way.
+
+
+---
+
+🔹 Array Destructuring
+
+Basic example
+
+let arr = [10, 20, 30];
+let [a, b, c] = arr;
+
+console.log(a, b, c);
+
+Output
+
+10 20 30
+
+Explanation:
+
+a gets arr[0]
+
+b gets arr[1]
+
+c gets arr[2]
+
+
+
+---
+
+Skip elements
+
+let arr = [1, 2, 3];
+let [a, , b] = arr;
+
+console.log(a, b);
+
+Output
+
+1 3
+
+Why:
+
+Extra comma skips index 1
+
+
+
+---
+
+Default values
+
+let arr = [5];
+let [a, b = 10] = arr;
+
+console.log(a, b);
+
+Output
+
+5 10
+
+Why:
+
+b is undefined → default value used
+
+
+
+---
+
+Swap variables (interview favorite)
+
+let x = 1, y = 2;
+[x, y] = [y, x];
+
+console.log(x, y);
+
+Output
+
+2 1
+
+Why:
+
+Temporary array created and destructured
+
+
+
+---
+
+Nested array destructuring
+
+let arr = [1, [2, 3]];
+let [a, [b, c]] = arr;
+
+console.log(a, b, c);
+
+Output
+
+1 2 3
+
+
+---
+
+🔹 Object Destructuring
+
+Basic example
+
+let user = { name: "Aman", age: 25 };
+let { name, age } = user;
+
+console.log(name, age);
+
+Output
+
+Aman 25
+
+Rule:
+
+Variable names must match property names
+
+
+
+---
+
+Rename variables
+
+let user = { name: "Aman", age: 25 };
+let { name: userName, age: userAge } = user;
+
+console.log(userName, userAge);
+
+
+---
+
+Default values
+
+let user = { name: "Aman" };
+let { name, age = 30 } = user;
+
+console.log(name, age);
+
+
+---
+
+Nested object destructuring
+
+let user = {
+  name: "Aman",
+  address: {
+    city: "Delhi",
+    pin: 110001
+  }
+};
+
+let {
+  address: { city, pin }
+} = user;
+
+console.log(city, pin);
+
+
+---
+
+🔹 Destructuring in Functions (VERY important)
+
+Array parameter
+
+function sum([a, b]) {
+  return a + b;
+}
+
+console.log(sum([2, 3]));
+
+
+---
+
+Object parameter
+
+function greet({ name }) {
+  console.log("Hello", name);
+}
+
+greet({ name: "Aman", age: 25 });
+
+
+---
+
+🔥 Tricky Interview Questions
+
+❓ Missing property
+
+let { a } = { b: 10 };
+console.log(a);
+
+Output
+
+undefined
+
+
+---
+
+❓ Destructuring null / undefined
+
+let { a } = null;
+
+Result
+
+TypeError
+
+Why:
+
+Cannot destructure null or undefined
+
+
+
+---
+
+❓ Rest operator
+
+let arr = [1,2,3,4];
+let [a, b, ...rest] = arr;
+
+console.log(rest);
+
+Output
+
+[3,4]
+
+
+---
+
+🧠 One-Line Rules (Memorize)
+
+Arrays → position matters
+
+Objects → key name matters
+
+Extra comma → skip
+
+{} in arrow function ≠ return
+
+Cannot destructure null or undefined
+
+Rest (...) collects remaining values
+

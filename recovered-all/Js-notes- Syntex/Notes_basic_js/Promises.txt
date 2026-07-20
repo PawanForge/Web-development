@@ -1,0 +1,148 @@
+
+
+📌 ES6 PROMISES — ONE PAGE REVISION
+
+What is a Promise?
+
+👉 A Promise represents a value that will come later
+States:
+
+Pending – waiting
+
+Fulfilled – success
+
+Rejected – failure
+
+
+
+---
+
+Creating a Promise
+
+let promise = new Promise((resolve, reject) => {
+  let success = true;
+
+  if (success) {
+    resolve("Success");
+  } else {
+    reject("Error");
+  }
+});
+
+resolve() → success
+
+reject() → failure
+
+
+
+---
+
+.then() – Success Handler
+
+promise.then((result) => {
+  console.log(result);
+});
+
+Runs when promise is fulfilled
+
+
+---
+
+.catch() – Error Handler
+
+promise.catch((error) => {
+  console.log(error);
+});
+
+Runs when promise is rejected
+
+
+---
+
+.finally() – Always Runs
+
+promise.finally(() => {
+  console.log("Done");
+});
+
+Runs always (success or failure)
+
+
+---
+
+Full Basic Example
+
+new Promise((resolve, reject) => {
+  resolve("Data received");
+})
+.then(res => console.log(res))
+.catch(err => console.log(err))
+.finally(() => console.log("Finished"));
+
+
+---
+
+Promise Chaining
+
+👉 Multiple .then() in sequence
+👉 Each .then() gets previous result
+
+new Promise(resolve => resolve(10))
+.then(num => num * 2)
+.then(result => result + 5)
+.then(final => console.log(final)); // 25
+
+
+---
+
+Promise.all()
+
+👉 Runs multiple promises together
+👉 Succeeds only if ALL succeed
+
+let p1 = Promise.resolve(1);
+let p2 = Promise.resolve(2);
+let p3 = Promise.resolve(3);
+
+Promise.all([p1, p2, p3])
+.then(res => console.log(res)); // [1,2,3]
+
+❌ If one fails → all fail
+
+
+---
+
+Promise.race()
+
+👉 Returns the first finished promise
+
+let fast = new Promise(r => setTimeout(() => r("Fast"), 1000));
+let slow = new Promise(r => setTimeout(() => r("Slow"), 3000));
+
+Promise.race([fast, slow])
+.then(res => console.log(res)); // Fast
+
+
+---
+
+Quick Difference Table
+
+Method	Meaning
+
+Promise	Future result
+then	Success
+catch	Error
+finally	Always
+chaining	Step by step
+Promise.all	All must succeed
+Promise.race	First result
+
+
+
+---
+
+One-Line Memory Rule 🧠
+
+> Promises handle async work without callback hell
+
+

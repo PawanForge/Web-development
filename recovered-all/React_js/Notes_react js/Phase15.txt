@@ -1,0 +1,221 @@
+
+📘 useTransition Hook – React 18
+
+🔹 What is useTransition ?
+
+useTransition is a React hook that lets you mark some state updates as non-urgent (low priority) so that the UI does not freeze while heavy rendering is happening.
+
+It is mainly used for:
+
+Loaders
+
+Large list rendering
+
+Searching / filtering
+
+API data update UI
+
+
+
+---
+
+🔹 Why do we need useTransition ?
+
+Without useTransition:
+
+Heavy state update blocks the UI.
+
+Button freezes.
+
+Typing / clicking feels slow.
+
+
+With useTransition:
+
+Urgent updates stay fast.
+
+Heavy updates run in background.
+
+You get pending state for loader.
+
+
+
+---
+
+🔹 Syntax
+
+import { useState, useTransition } from "react";
+
+const [isPending, startTransition] = useTransition();
+
+
+---
+
+🔹 How it works ?
+
+Term	Meaning
+
+isPending	true when transition is running
+startTransition()	Wrap slow state updates
+
+
+
+---
+
+🔹 Example – Button Loader
+
+import { useState, useTransition } from "react";
+
+function App() {
+
+  const [pending, startTransition] = useTransition();
+  const [count, setCount] = useState(0);
+
+  function handleButton() {
+    startTransition(() => {
+      // heavy work simulation
+      setTimeout(() => {
+        setCount((prev) => prev + 1);
+      }, 2000);
+    });
+  }
+
+  return (
+    <div>
+      <h2>useTransition Hook in React</h2>
+
+      {pending && <p>Loading...</p>}
+
+      <button disabled={pending} onClick={handleButton}>
+        {pending ? "Please Wait..." : "Click Me"}
+      </button>
+
+      <h3>Count : {count}</h3>
+    </div>
+  );
+}
+
+export default App;
+
+
+---
+
+🔹 Purpose of useTransition
+
+Problem	Solution
+
+UI freeze	Keeps UI responsive
+No loader control	Gives pending flag
+Heavy re-render	Runs in background
+
+
+
+---
+
+📘 Keep Your Components Pure (Props Flow)
+
+🔹 What is a Pure Component ?
+
+A pure component:
+
+Uses props only
+
+Does not modify outside data
+
+Always gives same output for same input
+
+
+
+---
+
+🔹 Why components must be pure ?
+
+If component is not pure:
+
+Bugs increase
+
+Unexpected UI changes
+
+Hard to debug
+
+
+
+---
+
+🔹 Example – Parent → Child using Props
+
+Parent Component
+
+function App() {
+  let count = 3;
+
+  return (
+    <>
+      <h1>Keeping Components Pure</h1>
+      <Cup count={count} />
+    </>
+  );
+}
+
+export default App;
+
+
+---
+
+Child Component
+
+const Cup = (props) => {
+  let count = props.count;
+
+  return (
+    <h2>
+      We have {count} guests and we have to make {count} cups of tea.
+    </h2>
+  );
+};
+
+
+---
+
+🔹 Using Destructuring
+
+const Cup = ({ count }) => {
+  return (
+    <h2>
+      We have {count} guests and we have to make {count} cups of tea.
+    </h2>
+  );
+};
+
+
+---
+
+🔹 How Data flows in React
+
+Parent  --->  Child
+   props only
+
+Child can never change Parent data directly.
+
+
+---
+
+🔹 Purpose of Pure Components
+
+Benefit	Reason
+
+Easy Debugging	No side effects
+Reusable	Works anywhere
+Predictable UI	Same input → Same output
+
+
+
+---
+
+🧠 Final Conclusion
+
+Topic	Main Goal
+
+useTransition	Smooth UI + Loader control
+Pure Components	Clean, safe & predictable code
+

@@ -1,0 +1,186 @@
+
+---
+
+What does “copy” mean?
+
+Creating a new object or array from an existing one.
+
+👉 In JavaScript (React):
+
+Primitive values (number, string) → copied normally
+
+Objects & arrays → copied by reference
+
+
+
+---
+
+1️⃣ Shallow Copy
+
+Simple meaning
+
+A shallow copy:
+
+Copies only the first level
+
+Nested objects/arrays are shared
+
+
+
+---
+
+Example 1: Simple Object (No problem)
+
+const user = { name: "Pawan", age: 25 };
+
+const copy = { ...user }; // shallow copy
+
+copy.name = "Rahul";
+
+console.log(user.name); // Pawan
+
+✔️ Safe because no nested object
+
+
+---
+
+Example 2: Nested Object (Problem)
+
+const user = {
+  name: "Pawan",
+  address: {
+    city: "Delhi"
+  }
+};
+
+const copy = { ...user };
+
+copy.address.city = "Mumbai";
+
+console.log(user.address.city); // Mumbai ❌
+
+❗Why problem? Because address is not copied, it is shared.
+
+
+---
+
+Shallow Copy Methods
+
+Used a lot in React:
+
+{ ...object }
+
+[ ...array ]
+
+Object.assign()
+
+
+
+---
+
+2️⃣ Deep Copy
+
+Simple meaning
+
+A deep copy:
+
+Copies everything
+
+No shared data
+
+
+
+---
+
+Example
+
+const user = {
+  name: "Pawan",
+  address: {
+    city: "Delhi"
+  }
+};
+
+const deepCopy = JSON.parse(JSON.stringify(user));
+
+deepCopy.address.city = "Mumbai";
+
+console.log(user.address.city); // Delhi ✅
+
+✔️ Original data is safe
+
+⚠️ Limitation:
+
+Does not copy functions, Date, undefined
+
+
+
+---
+
+3️⃣ Why Copy is Important in React
+
+React uses immutability:
+
+> State should never be changed directly
+
+
+
+
+---
+
+❌ Wrong Way
+
+user.name = "Rahul";
+setUser(user);
+
+React may not re-render.
+
+
+---
+
+✅ Correct Way (Shallow Copy)
+
+setUser({
+  ...user,
+  name: "Rahul"
+});
+
+
+---
+
+4️⃣ Updating Nested State (React Way)
+
+setUser({
+  ...user,
+  address: {
+    ...user.address,
+    city: "Mumbai"
+  }
+});
+
+✔️ Each level is copied
+✔️ No mutation
+
+
+---
+
+5️⃣ Shallow vs Deep Copy (Quick Table)
+
+Shallow Copy	Deep Copy
+
+Copies first level only	Copies all levels
+Fast	Slower
+Common in React	Less common
+Risk with nested data	Safe
+
+
+
+---
+
+6️⃣ Easy Rule to Remember 🧠
+
+Simple state → Shallow copy
+
+Nested state → Copy each level
+
+Never modify state directly

@@ -1,0 +1,312 @@
+
+
+1️⃣ Bubbling vs Capturing
+
+<div id="parent">
+  <button id="child">Click me</button>
+</div>
+
+<script>
+document.getElementById('parent').addEventListener('click', () => console.log('Parent'), true); // capturing
+document.getElementById('child').addEventListener('click', () => console.log('Child'), false); // bubbling
+</script>
+
+Question: What is the order of console logs when you click the button?
+
+Answer:
+
+Parent
+Child
+
+Reason:
+
+Capturing phase (true) → top to bottom
+
+Bubbling phase (false) → bottom to top
+
+Child listener runs after capturing parent listener
+
+
+
+---
+
+2️⃣ stopPropagation()
+
+<div id="parent">
+  <button id="child">Click me</button>
+</div>
+
+<script>
+document.getElementById('parent').addEventListener('click', () => console.log('Parent'));
+document.getElementById('child').addEventListener('click', e => {
+  console.log('Child');
+  e.stopPropagation();
+});
+</script>
+
+Output:
+
+Child
+
+Reason:
+
+stopPropagation() stops the event from reaching parent
+
+Parent listener never fires
+
+
+
+---
+
+3️⃣ preventDefault()
+
+<a href="https://google.com" id="link">Go</a>
+
+<script>
+document.getElementById('link').addEventListener('click', e => {
+  e.preventDefault();
+  console.log('Link clicked');
+});
+</script>
+
+Output:
+
+Link clicked
+
+Reason:
+
+Browser does not navigate because preventDefault() stops default behavior
+
+
+
+---
+
+4️⃣ Event Delegation (Dynamic Elements)
+
+<ul id="list"></ul>
+<button id="add">Add Item</button>
+
+<script>
+document.getElementById('add').addEventListener('click', () => {
+  let li = document.createElement('li');
+  li.textContent = 'Item';
+  document.getElementById('list').appendChild(li);
+});
+
+document.getElementById('list').addEventListener('click', e => {
+  if(e.target.tagName === 'LI') console.log('Clicked LI');
+});
+</script>
+
+Question: Why does clicking a dynamically added <li> still fire the event?
+
+Reason:
+
+Listener is attached to parent (#list) → uses event delegation
+
+Works for future children too
+
+
+
+---
+
+5️⃣ Inline vs addEventListener
+
+<button onclick="console.log('Inline')">Click</button>
+
+<script>
+button.addEventListener('click', () => console.log('JS Listener'));
+</script>
+
+Output when clicked:
+
+Inline
+JS Listener
+
+Reason:
+
+Inline handler runs first
+
+addEventListener attaches another listener
+
+Multiple listeners are allowed
+
+
+
+---
+
+6️⃣ Multiple Listeners on Same Element
+
+let btn = document.querySelector('button');
+
+btn.addEventListener('click', () => console.log('First'));
+btn.addEventListener('click', () => console.log('Second'));
+
+Output:
+
+First
+Second
+
+Reason:
+
+addEventListener does not overwrite existing listeners
+
+Listeners execute in order added
+
+
+
+---
+
+7️⃣ Once Option
+
+btn.addEventListener('click', () => console.log('Only Once'), { once: true });
+
+Question: What happens if you click multiple times?
+
+Output:
+
+Only Once
+
+Reason:
+
+Listener auto-removed after first execution
+
+
+
+---
+
+8️⃣ Event Object Basics
+
+btn.addEventListener('click', e => {
+  console.log(e.target.id);
+});
+
+Reason:
+
+e.target → element where event originated
+
+e.currentTarget → element listener is attached to
+
+
+
+---
+
+9️⃣ Event Bubbling Trap with stopPropagation
+
+<div id="parent">
+  <button id="child">Click</button>
+</div>
+
+<script>
+document.getElementById('parent').addEventListener('click', () => console.log('Parent'));
+document.getElementById('child').addEventListener('click', e => {
+  console.log('Child');
+});
+</script>
+
+Question: Can the parent listener run before child?
+
+Answer:
+
+Only if capture: true
+
+
+parent.addEventListener('click', fn, true);
+
+
+---
+
+🔟 Keyboard Event Example
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'Enter') console.log('Enter pressed');
+});
+
+Reason:
+
+Use e.key for modern browsers
+
+e.keyCode is old (deprecated)
+
+
+
+---
+
+11️⃣ Event Delegation with stopPropagation Trap
+
+<ul id="list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
+<script>
+document.getElementById('list').addEventListener('click', e => {
+  console.log('UL clicked');
+});
+
+document.querySelector('li').addEventListener('click', e => {
+  console.log('LI clicked');
+  e.stopPropagation();
+});
+</script>
+
+Output if first <li> clicked:
+
+LI clicked
+
+Reason:
+
+stopPropagation prevents parent (ul) listener
+
+
+
+---
+
+12️⃣ Event Bubbling vs Capturing Quick Memory
+
+Concept	Order
+
+Capturing	Top → Target
+Target	Target element
+Bubbling	Target → Top
+
+
+Add listener { capture: true } → triggers in capturing phase
+
+Default is bubbling
+
+
+
+---
+
+🧠 Event Interview Summary – Simple Notes
+
+1. Event phases: capturing → target → bubbling
+
+
+2. stopPropagation() → stops event from moving
+
+
+3. preventDefault() → stops default browser action
+
+
+4. event delegation → attach listener on parent
+
+
+5. this in listener:
+
+Regular function → element listener attached to
+
+Arrow function → lexical scope
+
+
+
+6. Multiple listeners → all run in order
+
+
+7. once: true → auto-remove listener
+
+
+8. target vs currentTarget → origin vs listener
+
+

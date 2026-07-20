@@ -1,0 +1,201 @@
+
+🔹 1. Callback Function
+
+📌 What is Callback?
+
+A callback is a function passed as argument into another function and executed later.
+
+📌 Why Callback is needed?
+
+Some tasks take time (API call, file loading).
+So callback tells JS:
+👉 “When task completes, then run this function.”
+
+📌 Purpose
+
+Handle delayed tasks
+
+Control execution order
+
+
+
+---
+
+🧾 Syntax
+
+function greet(name, callback) {
+  console.log("Hello " + name);
+  callback();
+}
+
+function sayBye() {
+  console.log("Good Bye");
+}
+
+greet("Pawan", sayBye);
+
+
+---
+
+❌ Problem – Callback Hell
+
+task1(() => {
+  task2(() => {
+    task3(() => {
+      task4(() => {
+        console.log("Done");
+      });
+    });
+  });
+});
+
+This code is hard to read & debug.
+
+
+---
+
+🔹 2. Promise
+
+📌 What is Promise?
+
+Promise is an object that stores future result.
+
+📌 Why Promise?
+
+To remove callback hell and make code cleaner.
+
+
+---
+
+🧾 Syntax
+
+const myPromise = new Promise((resolve, reject) => {
+  let success = true;
+
+  if (success) {
+    resolve("Task Successful");
+  } else {
+    reject("Task Failed");
+  }
+});
+
+
+---
+
+🔹 3. .then() – Success Handler
+
+Why use .then()?
+
+Because Promise returns value later.
+.then() receives that resolved value.
+
+myPromise.then((data) => {
+  console.log(data);
+});
+
+
+---
+
+🔹 4. Multiple .then() – Chaining
+
+myPromise
+  .then((res) => {
+    return res + " - Step 1";
+  })
+  .then((val) => {
+    console.log(val);
+  });
+
+
+---
+
+🔹 5. .catch() – Error Handler
+
+Why .catch()?
+
+To prevent program crash when Promise fails.
+
+myPromise.catch((error) => {
+  console.log("Error:", error);
+});
+
+
+---
+
+🔹 6. .finally() – Always Run
+
+myPromise.finally(() => {
+  console.log("Process Completed");
+});
+
+
+---
+
+🔹 7. Async / Await
+
+📌 What is async?
+
+Makes function return a Promise.
+
+📌 What is await?
+
+Pauses code until Promise resolves.
+
+📌 Why async/await?
+
+Removes .then() chaining and makes code readable.
+
+
+---
+
+function getData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Data Loaded");
+    }, 2000);
+  });
+}
+
+async function fetchData() {
+  let result = await getData();
+  console.log(result);
+}
+
+fetchData();
+
+
+---
+
+🔹 8. Error Handling in async/await
+
+async function fetchData() {
+  try {
+    let data = await getData();
+    console.log(data);
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
+
+
+---
+
+🔹 9. IIFE (Immediately Invoked Function Expression)
+
+What is IIFE?
+
+Function that runs automatically without calling.
+
+(function () {
+  console.log("IIFE Executed");
+})();
+
+
+---
+
+Async IIFE
+
+(async function () {
+  let data = await getData();
+  console.log(data);
+})();

@@ -1,0 +1,174 @@
+
+🔄 React Lifecycle Methods (Simple Explanation)
+
+👉 Lifecycle means:
+Component ka “life journey” — from born → update → dead
+
+React component has 3 main phases:
+
+1️⃣ Mounting (Birth)
+2️⃣ Updating (Change)
+3️⃣ Unmounting (Death)
+
+
+---
+
+1️⃣ Mounting Phase (Component is Born)
+
+When a component is shown on the screen for the first time.
+
+Old Class Component Methods
+
+constructor()
+
+render()
+
+componentDidMount()
+
+
+Simple Meaning
+
+Method	What happens
+
+constructor	State create hota hai
+render	UI screen pe aata hai
+componentDidMount	After UI show ho jaata
+
+
+
+---
+
+Example (Class)
+
+componentDidMount() {
+  console.log("Component mounted");
+}
+
+📌 Use for:
+
+API calls
+
+timers
+
+subscriptions
+
+
+
+---
+
+Hook Equivalent (Function Component)
+
+useEffect(() => {
+  console.log("Component mounted");
+}, []);
+
+
+---
+
+2️⃣ Updating Phase (Component Changes)
+
+When:
+
+state changes
+
+props change
+
+
+Old Class Methods
+
+render()
+
+componentDidUpdate()
+
+
+
+---
+
+Example (Class)
+
+componentDidUpdate() {
+  console.log("Component updated");
+}
+
+📌 Runs after every update
+
+
+---
+
+Hook Equivalent
+
+useEffect(() => {
+  console.log("Component updated");
+}, [count]);
+
+📌 Runs when count changes
+
+
+---
+
+3️⃣ Unmounting Phase (Component is Removed)
+
+When component is removed from screen.
+
+Old Class Method
+
+componentWillUnmount()
+
+
+
+---
+
+Example (Class)
+
+componentWillUnmount() {
+  console.log("Component removed");
+}
+
+📌 Used to:
+
+clear timers
+
+remove event listeners
+
+
+
+---
+
+Hook Equivalent (Cleanup)
+
+useEffect(() => {
+  return () => {
+    console.log("Component unmounted");
+  };
+}, []);
+
+
+---
+
+🧠 Easy Visualization
+
+Mount → Update → Unmount
+
+Or in human life 😄:
+
+Born → Grow → Die
+
+
+---
+
+🪝 Hook Lifecycle Summary Table
+
+Lifecycle	Class Method	useEffect
+
+Mount	componentDidMount	useEffect(() => {}, [])
+Update	componentDidUpdate	useEffect(() => {}, [deps])
+Unmount	componentWillUnmount	return cleanup
+
+
+
+---
+
+💼 Interview One-Line Answer
+
+> React lifecycle describes the phases of a component from mounting, updating, to unmounting, and in function components these are handled using useEffect.
+

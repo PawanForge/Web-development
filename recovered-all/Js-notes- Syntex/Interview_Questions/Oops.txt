@@ -1,0 +1,140 @@
+
+
+---
+
+🔹 Question 1: What is OOP?
+
+Interview-level example answer:
+
+> Object-Oriented Programming is a programming approach based on objects. It uses classes to create objects, where a class is a blueprint and an object is an instance of that class. OOP helps in organizing code using concepts like encapsulation, inheritance, polymorphism, and abstraction, making applications more secure and reusable.
+
+
+
+
+---
+
+🔹 Question 2: Explain Class and Object with example
+
+Expected answer:
+
+> A class is a blueprint that defines variables and methods. An object is an instance of the class that represents a real-world entity.
+For example, Student is a class and student1 is an object created from it. The class defines properties, while the object uses them.
+
+
+
+
+---
+
+🔹 Question 3: What is Encapsulation? Give real example
+
+Expected answer:
+
+> Encapsulation is the process of binding data and methods into a single unit and restricting direct access to data using access modifiers.
+For example, declaring a variable as private prevents it from being accessed outside the class, which provides data security.
+
+
+
+
+---
+
+🔹 Question 4: Explain Inheritance
+
+Expected answer:
+
+> Inheritance is a mechanism where one class acquires the properties of another class. It follows a parent-child relationship and promotes code reusability.
+For example, a Dog class can inherit properties from an Animal class.
+
+
+
+
+---
+
+🔹 Question 5: What is Polymorphism?
+
+Expected answer:
+
+> Polymorphism means many forms. It allows a method to behave differently based on context.
+It is of two types: method overloading and method overriding.
+
+
+
+
+---
+
+🔹 Question 6: Difference between Overloading and Overriding
+
+Expected answer:
+
+> Method overloading occurs when multiple methods have the same name but different parameters within the same class.
+Method overriding occurs when a child class provides a specific implementation of a method already defined in the parent class.
+
+
+
+
+---
+
+🔹 Question 7: What is Constructor?
+
+Expected answer:
+
+> A constructor is a special method used to initialize object data. It has the same name as the class and does not have a return type. It is called automatically when an object is created.
+
+
+
+
+---
+
+🔹 Question 8: Explain Abstraction with example
+
+Expected answer:
+
+> Abstraction is the process of hiding internal implementation details and showing only essential features to the user.
+For example, while driving a car, we use steering and brakes without knowing how the engine works internally.
+
+
+
+
+---
+
+🔹 Question 9: What is this keyword?
+
+Expected answer:
+
+> The this keyword refers to the current object of the class. It is mainly used to differentiate instance variables from local variables.
+
+
+
+
+---
+
+🔹 Question 10: What is super keyword?
+
+Expected answer:
+
+> The super keyword refers to the parent class object. It is used to access parent class variables, methods, or constructors.
+
+
+
+
+---
+
+⭐ ADVANCED INTERVIEW PRACTICE (Important)
+
+Q11: Why OOP is better than procedural programming?
+
+Answer:
+
+> OOP provides better data security, reusability, modularity, and easier maintenance compared to procedural programming.
+
+
+
+
+---
+
+Q12: Can we achieve multiple inheritance in Java?
+
+Answer:
+
+> Java does not support multiple inheritance using classes, but it can be achieved using interfaces.
+
+

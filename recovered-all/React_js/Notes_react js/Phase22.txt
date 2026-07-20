@@ -1,0 +1,156 @@
+
+
+📘 Rules for React Hooks – Complete Notes
+
+
+---
+
+🔹 What are Hooks?
+
+Hooks are special functions in React that let you use state and lifecycle features in functional components.
+
+Examples:
+
+useState()
+
+useEffect()
+
+useRef()
+
+useId()
+
+
+
+---
+
+🔹 Naming Rule
+
+> Every hook name must start with use.
+
+
+
+Correct	Wrong
+
+useState	state
+useEffect	effect
+useRef	ref
+
+
+
+---
+
+🔹 Where to Use Hooks?
+
+Hooks must be used at the top level of functional components only.
+
+export default function App() {
+  const [count, setCount] = useState(0);   // ✅ correct
+
+  return <h1>{count}</h1>;
+}
+
+
+---
+
+❗ Rules for React Hooks
+
+
+---
+
+1️⃣ Do NOT call hooks inside Conditions
+
+❌ Wrong:
+
+if (isLogin) {
+  const [user, setUser] = useState("");  // ❌
+}
+
+✅ Correct:
+
+const [user, setUser] = useState("");
+
+if (isLogin) {
+  console.log(user);
+}
+
+
+---
+
+2️⃣ Do NOT call hooks inside Loops
+
+❌ Wrong:
+
+for (let i = 0; i < 3; i++) {
+  const [count, setCount] = useState(0);  // ❌
+}
+
+
+---
+
+3️⃣ Do NOT call hooks after Return Statement
+
+❌ Wrong:
+
+return <h1>Hello</h1>;
+const [data, setData] = useState("");  // ❌
+
+
+---
+
+4️⃣ Do NOT call hooks inside Event Handlers
+
+❌ Wrong:
+
+function handleClick() {
+  const [num, setNum] = useState(0);  // ❌
+}
+
+
+---
+
+5️⃣ Do NOT use Hooks in Class Components
+
+❌ Wrong:
+
+class App extends Component {
+  const [count, setCount] = useState(0);  // ❌
+}
+
+Hooks are only for functional components.
+
+
+---
+
+6️⃣ Do NOT call hooks inside Nested / Private Functions
+
+❌ Wrong:
+
+function helper() {
+  const [x, setX] = useState(0); // ❌
+}
+
+
+---
+
+🔹 Correct Structure of Hooks
+
+import { useState } from "react";
+
+export default function App() {
+  const [value, setValue] = useState("");
+
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
+
+  return (
+    <input value={value} onChange={handleChange} />
+  );
+}
+
+
+---
+
+🧠 One Line Memory Trick
+
+> Hooks must be called only at the top level of functional components and never inside conditions, loops, functions, events or classes

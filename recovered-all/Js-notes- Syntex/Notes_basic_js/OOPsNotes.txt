@@ -1,0 +1,452 @@
+OOP Revision Notes – Class & Method (Interview Ready)
+
+These notes are written in simple language, with examples and practice questions, focused on interview preparation.
+
+
+---
+
+1. What is OOP?
+
+OOP (Object-Oriented Programming) is a programming approach based on objects.
+
+An object represents a real-world entity. Example:
+
+Car
+
+Student
+
+Bank Account
+
+
+Each object has:
+
+Data → variables (properties)
+
+Behavior → methods (functions)
+
+
+
+---
+
+2. Class
+
+Definition:
+
+A class is a blueprint or template used to create objects.
+
+Simple words:
+
+Class = Design Object = Real thing made from design
+
+Example (Real Life):
+
+Class → House Plan Object → Actual House
+
+Example (Programming – Java-like syntax):
+
+class Student {
+    int id;
+    String name;
+}
+
+Here:
+
+Student → class
+
+id, name → variables
+
+
+
+---
+
+3. Object
+
+Definition:
+
+An object is an instance of a class.
+
+Example:
+
+Student s1 = new Student();
+s1.id = 1;
+s1.name = "Rahul";
+
+Here:
+
+s1 is an object of class Student
+
+
+
+---
+
+4. Method
+
+Definition:
+
+A method is a block of code that performs a specific task.
+
+Why methods are used?
+
+Code reusability
+
+Easy to understand
+
+Easy to maintain
+
+
+Syntax:
+
+returnType methodName(parameters) {
+    // code
+}
+
+Example:
+
+void display() {
+    System.out.println("Hello");
+}
+
+
+---
+
+5. Types of Methods
+
+1. No Parameter, No Return
+
+void show() {
+    System.out.println("Welcome");
+}
+
+2. With Parameter, No Return
+
+void add(int a, int b) {
+    System.out.println(a + b);
+}
+
+3. No Parameter, With Return
+
+int getNumber() {
+    return 10;
+}
+
+4. With Parameter, With Return
+
+int multiply(int a, int b) {
+    return a * b;
+}
+
+
+---
+
+6. OOP Concepts (Very Important for Interview)
+
+1. Encapsulation
+
+Definition: Binding data and methods together in a class.
+
+Example:
+
+class Bank {
+    private int balance = 1000;
+
+    public int getBalance() {
+        return balance;
+    }
+}
+
+Interview Line: Encapsulation provides data security.
+
+
+---
+
+2. Inheritance
+
+Definition: One class acquires properties of another class.
+
+Example:
+
+class Animal {
+    void eat() {}
+}
+
+class Dog extends Animal {
+    void bark() {}
+}
+
+Interview Line: Inheritance supports code reusability.
+
+
+---
+
+3. Polymorphism
+
+Definition: One method, many forms.
+
+Method Overloading:
+
+int add(int a, int b) { return a + b; }
+int add(int a, int b, int c) { return a + b + c; }
+
+Method Overriding:
+
+class Parent {
+    void show() {}
+}
+
+class Child extends Parent {
+    void show() {}
+}
+
+
+---
+
+4. Abstraction
+
+Definition: Showing only essential details and hiding implementation.
+
+Example:
+
+abstract class Vehicle {
+    abstract void run();
+}
+
+class Bike extends Vehicle {
+    void run() {
+        System.out.println("Bike runs");
+    }
+}
+
+
+---
+
+7. Access Modifiers (public, private, default, protected)
+
+Definition:
+
+Access modifiers define scope and visibility of variables, methods, and classes.
+
+Types of Access Modifiers:
+
+1. public
+
+Accessible everywhere
+
+
+public int age;
+
+2. private
+
+Accessible only within the same class
+
+Used for data hiding
+
+
+private int salary;
+
+3. default (no keyword)
+
+Accessible within the same package only
+
+
+int marks; // default access
+
+4. protected
+
+Accessible within same package + child class
+
+
+protected int id;
+
+Interview Tip:
+
+Most secure → private
+
+
+---
+
+8. this Keyword
+
+Definition:
+
+this keyword refers to the current object of the class.
+
+Uses of this keyword:
+
+1. To differentiate instance and local variables
+
+
+2. To call current class method
+
+
+3. To call current class constructor
+
+
+
+Example:
+
+class Student {
+    int id;
+
+    Student(int id) {
+        this.id = id;
+    }
+}
+
+
+---
+
+9. super Keyword
+
+Definition:
+
+super keyword refers to the parent class object.
+
+Uses of super keyword:
+
+1. Access parent class variable
+
+
+2. Call parent class method
+
+
+3. Call parent class constructor
+
+
+
+Example:
+
+class Parent {
+    int x = 10;
+}
+
+class Child extends Parent {
+    int x = 20;
+
+    void show() {
+        System.out.println(super.x);
+    }
+}
+
+
+---
+
+10. Constructor
+
+Definition:
+
+A constructor is a special method used to initialize objects.
+
+Example:
+
+class Student {
+    int id;
+
+    Student(int i) {
+        id = i;
+    }
+}
+
+Important Points:
+
+Same name as class
+
+No return type
+
+
+
+---
+
+11. Difference (Interview Favorite)
+
+Class vs Object
+
+Class	Object
+
+Blueprint	Real instance
+No memory	Uses memory
+
+
+Method vs Constructor
+
+Method	Constructor
+
+Has return type	No return type
+Called manually	Called automatically
+
+
+
+---
+
+12. Common Interview Questions
+
+1. What is OOP?
+
+
+2. Difference between class and object?
+
+
+3. What is encapsulation?
+
+
+4. Explain inheritance with example
+
+
+5. What is polymorphism?
+
+
+6. Method overloading vs overriding
+
+
+7. What is constructor?
+
+
+8. Why abstraction is needed?
+
+
+
+
+---
+
+13. Practice Questions
+
+Theory:
+
+1. Define class and object
+
+
+2. Explain four OOP concepts
+
+
+3. Write advantages of OOP
+
+
+
+Coding Practice:
+
+1. Create a class Employee with id and salary
+
+
+2. Write a method to calculate sum of two numbers
+
+
+3. Demonstrate method overloading
+
+
+4. Write a program using inheritance
+
+
+
+
+---
+
+14. Interview Tip ⭐
+
+When answering:
+
+Start with definition
+
+Give simple example
+
+End with one benefit
+
+

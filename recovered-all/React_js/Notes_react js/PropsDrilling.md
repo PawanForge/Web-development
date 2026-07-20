@@ -1,0 +1,1 @@
+Prop drilling occurs when data is passed from a parent component to a deeply nested child component through multiple intermediate components using props, even when those intermediate components do not need the data.

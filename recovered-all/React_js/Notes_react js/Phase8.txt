@@ -1,0 +1,288 @@
+
+1. What is a Radio Button?
+
+A radio button is a form input that allows the user to select only ONE option from a group.
+
+👉 Once selected, other options automatically unselect.
+
+Example: ◉ Male
+◯ Female
+◯ Other
+
+
+---
+
+2. Why Do We Use Radio Buttons?
+
+Radio buttons are used when:
+
+Only one option must be selected
+
+Gender selection
+
+Payment method
+
+Subscription plan
+
+Yes / No choices
+
+
+✔ Prevents multiple selections
+✔ Improves user clarity
+
+
+---
+
+3. Difference: Checkbox vs Radio Button
+
+Checkbox	Radio Button
+
+Multiple selection	Single selection
+Uses array state	Uses single value
+Independent	Group-based
+checked optional	name required
+
+
+
+---
+
+4. Radio Button Syntax (HTML)
+
+<input type="radio" name="gender" value="Male" />
+<label>Male</label>
+
+✔ name must be SAME for all radio buttons
+✔ value stores selected option
+
+
+---
+
+5. Important Radio Button Attributes
+
+Attribute	Purpose
+
+type="radio"	Creates radio button
+name	Groups radio buttons
+value	Selected value
+checked	Controls selection
+onChange	Handles selection
+id	Unique identifier
+htmlFor	Connect label
+
+
+
+---
+
+6. Why Use State for Radio Button in React?
+
+Because:
+
+React needs to track selected value
+
+Used in form submission
+
+Required for validation
+
+Makes radio controlled component
+
+
+
+---
+
+7. Creating State for Radio Button
+
+Single value state (NOT array)
+
+const [gender, setGender] = useState("");
+
+✔ Because only ONE value is allowed
+
+
+---
+
+8. Handling Radio Button Change
+
+What Happens?
+
+When user selects a radio button:
+
+event.target.value gives selected option
+
+State updates with that value
+
+
+
+---
+
+Handler Function
+
+const handleGender = (event) => {
+  setGender(event.target.value);
+};
+
+
+---
+
+9. Radio Button JSX Example
+
+<input
+  type="radio"
+  name="gender"
+  value="Male"
+  onChange={handleGender}
+/>
+<label>Male</label>
+
+
+---
+
+10. Controlled Radio Button (Best Practice ⭐)
+
+Why Controlled?
+
+✔ React decides which radio is selected
+✔ Prevents bugs
+✔ Industry standard
+
+
+---
+
+Code:
+
+<input
+  type="radio"
+  name="gender"
+  value="Male"
+  checked={gender === "Male"}
+  onChange={handleGender}
+/>
+
+
+---
+
+11. Complete Working Example (Recommended)
+
+import { useState } from "react";
+
+function GenderForm() {
+  const [gender, setGender] = useState("");
+
+  const handleGender = (event) => {
+    setGender(event.target.value);
+  };
+
+  return (
+    <div>
+      <h1>Select Gender</h1>
+
+      <input
+        type="radio"
+        name="gender"
+        value="Male"
+        checked={gender === "Male"}
+        onChange={handleGender}
+      /> Male
+      <br />
+
+      <input
+        type="radio"
+        name="gender"
+        value="Female"
+        checked={gender === "Female"}
+        onChange={handleGender}
+      /> Female
+      <br />
+
+      <input
+        type="radio"
+        name="gender"
+        value="Other"
+        checked={gender === "Other"}
+        onChange={handleGender}
+      /> Other
+
+      <h3>Selected Gender: {gender}</h3>
+    </div>
+  );
+}
+
+export default GenderForm;
+
+
+---
+
+12. How This Works (Step-by-Step)
+
+1️⃣ User clicks radio
+2️⃣ onChange triggers
+3️⃣ event.target.value captured
+4️⃣ State updates
+5️⃣ React re-renders
+6️⃣ Correct radio stays selected
+
+
+---
+
+13. Purpose of checked={gender === "Male"}
+
+✔ Matches UI with state
+✔ Keeps selection persistent
+✔ Makes component controlled
+
+
+---
+
+14. Real-Life Use Cases
+
+Registration forms
+
+Payment selection
+
+Exam MCQ options
+
+Subscription plans
+
+Feedback forms
+
+
+
+---
+
+15. Interview Questions ⭐
+
+Q1. Why use radio instead of checkbox?
+
+> Because only one option should be selected.
+
+
+
+Q2. Why is name attribute important?
+
+> It groups radio buttons and ensures single selection.
+
+
+
+Q3. Can we use array state for radio?
+
+> No, because only one value is allowed.
+
+
+
+
+---
+
+16. One-Line Definition (Exam Ready)
+
+> A radio button in React allows single selection from multiple options using a single state value and controlled checked property.
+
+
+
+
+---
+
+17. Checkbox vs Radio (Final Summary)
+
+✔ Checkbox → Multiple values → Array
+✔ Radio → Single value → String
+
+

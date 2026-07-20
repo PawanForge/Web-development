@@ -1,0 +1,338 @@
+
+
+✅ map()
+✅ filter()
+✅ reduce()
+✅ forEach()
+✅ implicit / explicit return
+✅ array creation
+✅ mutation vs immutability
+✅ chaining
+✅ shallow vs deep copy
+✅ reference behavior
+✅ common traps
+✅ interview rules
+
+📘 JavaScript Important Concepts – Interview Notes Version
+
+
+---
+
+🔹 forEach()
+
+Purpose
+
+Used for iteration
+
+Used for side effects
+
+Not for transformation
+
+
+Rules
+
+❌ Does NOT return anything
+
+❌ Does NOT create a new array
+
+❌ Return inside callback is ignored
+
+❌ Cannot break or continue
+
+✅ Mutates external variables
+
+✅ Used for logging, sum, DOM, API calls
+
+
+Example
+
+let sum = 0;
+[1,2,3].forEach(x => sum += x);
+
+
+---
+
+🔹 map()
+
+Purpose
+
+Used for transformation
+
+Creates a new array
+
+
+Rules
+
+✅ Returns a new array
+
+❌ Does NOT mutate original array
+
+❗ Must return value from callback
+
+✅ Chainable
+
+
+Example
+
+[1,2,3].map(x => x * 2);
+// [2,4,6]
+
+Trap
+
+arr.map(x => { x * 2 });
+// [undefined, undefined, undefined]
+
+Reason → {} needs explicit return
+
+
+---
+
+🔹 filter()
+
+Purpose
+
+Used for selection
+
+Filters elements based on condition
+
+
+Rules
+
+✅ Returns new array
+
+❌ Original array unchanged
+
+Callback must return true/false
+
+
+Example
+
+[1,2,3,4].filter(x => x > 2);
+// [3,4]
+
+
+---
+
+🔹 reduce()
+
+Purpose
+
+Used for accumulation
+
+Convert array → single value / object / array
+
+
+Syntax
+
+arr.reduce((acc, curr) => newAcc, initialValue)
+
+Rules
+
+❗ Must return accumulator
+
+❗ Initial value important
+
+Most powerful array method
+
+
+Examples
+
+// Sum
+[1,2,3].reduce((a,c)=> a+c, 0)
+
+// Flatten
+[[1],[2],[3]].reduce((a,c)=> a.concat(c), [])
+
+
+---
+
+🔹 Implicit vs Explicit Return
+
+Implicit
+
+x => x * 2
+
+Explicit
+
+x => { return x * 2; }
+
+Rule
+
+> {} = must use return
+no {} = auto return
+
+
+
+
+---
+
+🔹 New Array Creation
+
+Method	Creates new array
+
+map	✅
+filter	✅
+reduce	✅
+slice	✅
+concat	✅
+spread ([...])	✅
+forEach	❌
+push	❌
+pop	❌
+splice	❌
+
+
+
+---
+
+🔹 Mutation vs Non-Mutation
+
+Mutating methods
+
+push
+
+pop
+
+shift
+
+unshift
+
+splice
+
+sort
+
+reverse
+
+fill
+
+
+Non-mutating methods
+
+map
+
+filter
+
+reduce
+
+slice
+
+concat
+
+spread
+
+
+
+---
+
+🔹 Reference vs Value
+
+let a = [1,2];
+let b = a;
+
+b points to same memory
+
+Changes affect both
+
+
+let b = [...a];
+
+New array created
+
+Different memory
+
+
+
+---
+
+🔹 Shallow Copy Trap
+
+let a = [[1],[2]];
+let b = [...a];
+b[0].push(9);
+
+➡ Affected both → nested reference
+
+
+---
+
+🔹 Chaining
+
+arr
+  .filter(x => x > 2)
+  .map(x => x * 2)
+  .reduce((a,c)=>a+c,0);
+
+
+---
+
+🔹 Common Interview Traps
+
+1. map without return
+
+map(x => { x*2 })
+
+2. forEach expecting array
+
+let x = arr.forEach(...)
+
+3. reduce without return
+
+reduce((a,c)=>{ a+c })
+
+4. fill reference
+
+Array(3).fill([])
+
+5. delete index
+
+delete arr[1] // hole, not shift
+
+
+---
+
+🔹 Mental Model (Golden Rule)
+
+forEach → do something
+
+map → change something
+
+filter → select something
+
+reduce → combine something
+
+
+
+---
+
+🧠 Interview One-Liners
+
+forEach is for side effects, not data transformation
+
+map always returns a new array
+
+filter returns subset
+
+reduce builds a single output
+
+{} in arrow function needs return
+
+Arrays are objects → reference-based
+
+Spread is shallow copy
+
+Most array methods are shallow
+
+
+
+---
+
+📌 Missing But Important Topics (Covered Now)
+
+✅ Shallow vs Deep copy
+✅ Reference vs Value
+✅ Mutation vs Immutability
+✅ Callback return behavior
+✅ Chaining
+✅ Functional programming pattern
+✅ Memory behavior
+✅ Performance mindset
