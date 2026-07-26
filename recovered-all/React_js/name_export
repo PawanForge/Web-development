@@ -1,0 +1,42 @@
+Sure 👍 I can make **small, simple notes** for you with:
+
+For example, for today's topic:
+
+### `export` and `import`
+
+**1. Named Export**
+When you export using the name of a function/variable.
+
+```jsx
+export function App() {
+  return <h1>Hello</h1>
+}
+```
+
+Import with `{ }`:
+
+```jsx
+import { App } from './App.jsx'
+```
+
+**2. Default Export**
+When you export one main/default thing from a file.
+
+```jsx
+function App() {
+  return <h1>Hello</h1>
+}
+
+export default App
+```
+
+Import without `{ }`:
+
+```jsx
+import App from './App.jsx'
+```
+
+**Remember:**
+`export function App` → `import { App }`
+`export default App` → `import App`
+
